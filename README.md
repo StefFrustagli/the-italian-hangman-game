@@ -1,32 +1,27 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# THE ITALIAN HANGMAN GAME
 
-Welcome,
+*It's time to play the **Italian hangman game**!*
+This is a Python terminal game that runs on Heroku's mock terminal created by the Code Institute.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **March 14, 2023**
+This game is intended for intermediate Italian learners and for native Italian children who are learning to read and write. As instructions are given in English, basic English is also required.
 
-## Reminders
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
 
-## Creating the Heroku app
+## How to play
+Save the little man from the Italian hangman by identifying the words correctly.  Ten ??? attempts are all you have, so think carefully. To simplify the choice of words, there are 3 categories to select from at the beginning of the game. 
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+*In Italy we play a wordy game so grand,* <br>
+*It is the Hangman game! Where letters in the air stand.* <br>
 
-1. `heroku/python`
-2. `heroku/nodejs`
+*Trying guessing the hidden word, letter by letter,* <br> 
+*and the poor man's fate - you'll make it so much better.* <br> 
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+*The keyboard is right there - be ready to play.* <br>
+*Try your best - don't let the hangman swing today.* <br>
+*From "A" to "Z," choose your letters with care,* <br>
+*and remember: in Italian we don't use y or j or x.* <br>
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
----
-
-Happy coding!
+*So guess away - don't let your chances slip,* <br>
+*as the Italian Hangman, it's a challenging trip.* <br>
+*Guess the word, solve the puzzle, and win the day!* <br>
+*Or watch the hangman's noose, in the breeze, sway.*<br> ??? persona verbo corretta?
