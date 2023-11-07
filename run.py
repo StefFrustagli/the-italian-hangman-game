@@ -24,3 +24,6 @@
 
 
 """
+
+# Import random module to choose a random word from lists of words
+import random
