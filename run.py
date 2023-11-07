@@ -114,26 +114,51 @@ def introduction():
     print("as the Italian Hangman, it's a challenging trip.")
     print("\nGuess the word, solve the puzzle, and win the day!")
     print("Or watch the hangman's noose, in the breeze, sway.\n")
-    print("\nWOULD YOU LIKE TO PLAY? \n")
-    print(input("Yes/No: "))
+    
+def ask_to_play():
+    """
+    Define logic at beginning of the game.
+    If 'yes', the game starts. If 'no', the game exits. 
+    If a different word from 'yes' or 'no' is selected,
+    a message asked the user to enter the correct words.
+    """
+    while True:
+        answer = input("\nWOULD YOU LIKE TO PLAY? [Yes/No]\n ").strip().lower()
+    
+        if answer == "yes":
+           print("Let's play!")
+           # Insert Logic of the game here
+           # Insert Function for selecting category 
+           break # Exit the loop as the user wants to play
+        elif answer == "no":
+           print("Okay. Ciao!")
+           # Exit the game
+           return # Exit the function
+        else:
+           print("Please enter 'Yes' or 'No'")
+    
+
+ 
+
+    
 
 def restart_game():
     """
-    If player wins or loses, ask if they want to restart the game
+    When player wins or loses, ask if they want to restart the game
     """
     print("\nWOULD YOU LIKE TO PLAY AGAIN? \n")
     print(input("Yes/No: "))
         
 
 
-def select_cathegory():
+def select_category():
        """
-       select word bank and from there generate a random word
+       If player selects yes, ask them to select a word bank. From there generate a random word
        """
 
 def get_random_word():
        """ 
-       Get a random word from the bank word and return it.
+       When player selects category, get a random word from the bank word and return it.
        When user starts the game, a random word is generated.
        """
 
@@ -151,13 +176,14 @@ def print_dashed_word():
        blanks = '_' * len(secretWord) # Repeat underscoring as many times as the word length
 
 
-# Main function       
+# Main function 
 def main():
        """
        Activate the game dynamic:
        """
        little_man_pic() 
        introduction()
+       ask_to_play()  
        """
        word = get_random_word()
        correctly_guessed_letters = []
