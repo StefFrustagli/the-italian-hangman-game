@@ -2,7 +2,6 @@
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
-
 """
 1. User opens terminal. Welcome message appears with nursery rhyme to explain the game.
 2. User asked if they want to play. 
@@ -17,14 +16,18 @@
       - Letters guessed: a, b 
       - Attempts left: num
 4. User asked to choose a letter.
-5. 5A If letter is wrong, a message appears: "Letter wromg. Try again." Input to choose another letter.
-      A part of the hangman picture is shown. It is added at the bottom of the info provided above. 
-      This will happen for seven times, the attempts the player has. When the picture is complete, the player loses the game
+5. 5A If letter is wrong, a message appears: "Letter wromg. Try again." 
+      Input to choose another letter. A part of the hangman picture is shown. 
+      It is added at the bottom of the info provided above. 
+      This will happen for seven times, the attempts the player has. 
+      When the picture is complete, the player loses the game
    5B If the letter is right, the letter will be displayed in the correct position. 
-      The user will be asked to guess again till the attempts end or the word is completed.
-
-
+      The user will be asked to guess again till the attempts end 
+      or the word is completed.
+6. When player loses or wins, a message asking if they want to play again will appear. 
+   Return to point 2.      
 """
+
 # Import random module to choose a random word from lists of words
 import random
 
@@ -115,9 +118,43 @@ def introduction():
     print("\nGuess the word, solve the puzzle, and win the day!")
     print("Or watch the hangman's noose, in the breeze, sway.\n")
     
+
+def select_category():
+       """
+       If player selects yes, ask them to select a category. 
+       Depending on the category selected, a dashed word from the WORD BANK appears.
+       """
+       categories = {
+             1: "Natural phenomena",
+             2: "Months & Seasons",
+             3: "Animals"
+       }
+       print("\nSelect a category: \n\n 1: Natural phenomena\n 2: Months & Seasons\n 3: Animals\n")
+
+       category_one = categories[1]
+       category_two = categories[2]
+       category_two = categories[3]
+       
+       while True:
+             selection = input("Please indicate the category's number: ")
+
+             if selection in ["1", "2", "3"]:
+                 # Get random word from WORD_BANK_ONE
+                 category_number = int(selection)
+                 print(category_number) # Deve rimandare alla categoria di parole e poi sceglierne una a caso
+                 break
+
+             
+             else:
+                 print("invalid choice. Please select a valid category. [1, 2, 3]")
+    
+
+
+       
+
 def ask_to_play():
     """
-    Define logic at beginning of the game.
+    Define logic at beginning of the game using a while loop.
     If 'yes', the game starts. If 'no', the game exits. 
     If a different word from 'yes' or 'no' is selected,
     a message asked the user to enter the correct words.
@@ -126,8 +163,9 @@ def ask_to_play():
         answer = input("\nWOULD YOU LIKE TO PLAY? [Yes/No]\n ").strip().lower()
     
         if answer == "yes":
-           print("Let's play!")
+           print("\nLet's play!")
            # Insert Logic of the game here
+           select_category()
            # Insert Function for selecting category 
            break # Exit the loop as the user wants to play
         elif answer == "no":
@@ -136,10 +174,6 @@ def ask_to_play():
            return # Exit the function
         else:
            print("Please enter 'Yes' or 'No'")
-    
-
- 
-
     
 
 def restart_game():
@@ -151,10 +185,7 @@ def restart_game():
         
 
 
-def select_category():
-       """
-       If player selects yes, ask them to select a word bank. From there generate a random word
-       """
+
 
 def get_random_word():
        """ 
