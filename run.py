@@ -95,3 +95,75 @@ def little_man_seven():
         print(" /|\\  |")
         print(" / \\  |")
         print("     ===")  
+
+
+def introduction():
+    """
+    Introduction to the game with a nursery rhyme
+    """
+    print("\nWELCOME TO THE ITALIAN HANGMAN GAME\n")
+    print("In Italy we play a wordy game so grand,")
+    print("It is the Hangman game! Where letters in the air stand.")
+    print("\nTry guessing the hidden word, letter by letter,")
+    print("for the poor man's fate - you'll make it so much better.")
+    print("\nThe keyboard is right there - be ready to play.")
+    print("Try your best - don't let the hangman swing today.")
+    print("\nFrom 'A' to 'Z', choose your letters with care,")
+    print("and remember: in Italian we don't use y or j or x.")
+    print("\nSo guess away - don't let your chances slip,")
+    print("as the Italian Hangman, it's a challenging trip.")
+    print("\nGuess the word, solve the puzzle, and win the day!")
+    print("Or watch the hangman's noose, in the breeze, sway.\n")
+    print("\nWOULD YOU LIKE TO PLAY? \n")
+    print(input("Yes/No: "))
+
+def restart_game():
+    """
+    If player wins or loses, ask if they want to restart the game
+    """
+    print("\nWOULD YOU LIKE TO PLAY AGAIN? \n")
+    print(input("Yes/No: "))
+        
+
+
+def select_cathegory():
+       """
+       select word bank and from there generate a random word
+       """
+
+def get_random_word():
+       """ 
+       Get a random word from the bank word and return it.
+       When user starts the game, a random word is generated.
+       """
+
+def print_dashed_word():
+       """
+       Given a word, print the letters that have been guessed. Otherwise, print dashes.
+
+       e.g. for the word 'gatto', if 'g' and 'a' have been guessed, print 'g a _ _ o'
+ 
+       word: str - the word to print out
+       guessed_letters: list of str - a list of letters in word that have already been guessed
+    
+       """
+
+       blanks = '_' * len(secretWord) # Repeat underscoring as many times as the word length
+
+
+# Main function       
+def main():
+       """
+       Activate the game dynamic:
+       """
+       little_man_pic() 
+       introduction()
+       """
+       word = get_random_word()
+       correctly_guessed_letters = []
+
+       print_dashed_word(word, correctly_guessed_letters)
+
+       for i in range(NUM_ATTEMPTS):
+       """
+main()
