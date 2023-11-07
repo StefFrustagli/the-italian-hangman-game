@@ -2,6 +2,7 @@
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
+
 """
 1. User opens terminal. Welcome message appears with nursery rhyme to explain the game.
 2. User asked if they want to play. 
@@ -24,6 +25,17 @@
 
 
 """
-
 # Import random module to choose a random word from lists of words
 import random
+
+# Category: natural phenomena
+WORD_BANK_ONE = "temporale, pioggia, grandine, vento, arcobaleno, fulmine, tempesta, tuono, maremoto, terremoto, alluvione, frana, valanga, tornado".split(',')
+
+# Category: months & seasons
+WORD_BANK_TWO = "gennaio, febbraio, marzo, aprile, maggio, giugno, luglio, agosto, settembre, ottobre, novembre, dicembre, primavera, estate, autunno, inverno".split(',')
+
+# Category: animals
+WORD_BANK_THREE = "cammello, rinoceronte, elefante, ermellino, bisonte, canguro, lucertola, coccodrillo, anaconda, criceto, cavallo, pantera, delfino, balena, gorilla, antilope, asino, murena, aquila, rondine".split(',')
+
+# Number of attempts
+NUM_ATTEMPTS = 7
