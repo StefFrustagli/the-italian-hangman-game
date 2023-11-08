@@ -2,6 +2,7 @@
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
+
 """
 1. User opens terminal. Welcome message appears with nursery rhyme to explain the game.
 2. User asked if they want to play. 
@@ -26,8 +27,9 @@
       or the word is completed.
 6. When player loses or wins, a message asking if they want to play again will appear. 
    Return to point 2.      
-"""
 
+
+"""
 # Import random module to choose a random word from lists of words
 import random
 
@@ -118,6 +120,12 @@ def introduction():
     print("\nGuess the word, solve the puzzle, and win the day!")
     print("Or watch the hangman's noose, in the breeze, sway.\n")
     
+def get_random_word():
+       """ 
+       When player selects category, get a random word from the bank word and return it.
+       When user starts the game, a random word is generated.
+       """
+
 
 def select_category():
        """
@@ -139,18 +147,24 @@ def select_category():
              selection = input("Please indicate the category's number: ")
 
              if selection in ["1", "2", "3"]:
-                 # Get random word from WORD_BANK_ONE
-                 category_number = int(selection)
-                 print(category_number) # Deve rimandare alla categoria di parole e poi sceglierne una a caso
-                 break
+                 
+                category_number = int(selection)
+                selected_word_bank = None
+                 
+                if category_number == 1:
+                    selected_word_bank = WORD_BANK_ONE
+                elif category_number == 2:
+                    selected_word_bank = WORD_BANK_TWO
+                elif category_number == 3:
+                    selected_word_bank = WORD_BANK_THREE
 
-             
+                break
+                # RETURN RANDOM WORD 
+
              else:
                  print("invalid choice. Please select a valid category. [1, 2, 3]")
     
-
-
-       
+    
 
 def ask_to_play():
     """
@@ -183,15 +197,6 @@ def restart_game():
     print("\nWOULD YOU LIKE TO PLAY AGAIN? \n")
     print(input("Yes/No: "))
         
-
-
-
-
-def get_random_word():
-       """ 
-       When player selects category, get a random word from the bank word and return it.
-       When user starts the game, a random word is generated.
-       """
 
 def print_dashed_word():
        """
