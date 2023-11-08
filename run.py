@@ -120,12 +120,6 @@ def introduction():
     print("\nGuess the word, solve the puzzle, and win the day!")
     print("Or watch the hangman's noose, in the breeze, sway.\n")
     
-def get_random_word():
-       """ 
-       When player selects category, get a random word from the bank word and return it.
-       When user starts the game, a random word is generated.
-       """
-
 
 def select_category():
        """
@@ -158,12 +152,16 @@ def select_category():
                 elif category_number == 3:
                     selected_word_bank = WORD_BANK_THREE
 
-                break
+                if selected_word_bank:
+                     random_word = random.choice(selected_word_bank)
+                     blanks = ' _ ' * len(random_word) 
+                     print(blanks)
+                     return random_word
+                
                 # RETURN RANDOM WORD 
 
              else:
                  print("invalid choice. Please select a valid category. [1, 2, 3]")
-    
     
 
 def ask_to_play():
@@ -197,19 +195,6 @@ def restart_game():
     print("\nWOULD YOU LIKE TO PLAY AGAIN? \n")
     print(input("Yes/No: "))
         
-
-def print_dashed_word():
-       """
-       Given a word, print the letters that have been guessed. Otherwise, print dashes.
-
-       e.g. for the word 'gatto', if 'g' and 'a' have been guessed, print 'g a _ _ o'
- 
-       word: str - the word to print out
-       guessed_letters: list of str - a list of letters in word that have already been guessed
-    
-       """
-
-       blanks = '_' * len(secretWord) # Repeat underscoring as many times as the word length
 
 
 # Main function 
