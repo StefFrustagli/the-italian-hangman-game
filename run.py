@@ -154,15 +154,22 @@ def select_category():
 
                 if selected_word_bank:
                      random_word = random.choice(selected_word_bank)
-                     blanks = ' _ ' * len(random_word) 
-                     print(blanks)
                      return random_word
+                
                 
                 # RETURN RANDOM WORD 
 
              else:
                  print("invalid choice. Please select a valid category. [1, 2, 3]")
     
+
+def dashed_word(word):
+       """
+       Given a word, print the letters that have been guessed. Otherwise, print dashes.
+       """
+       blanks = ' _ ' * len(word) # Repeat underscoring as many times as the word length   
+       print("Word: ", blanks)  
+       return blanks
 
 def ask_to_play():
     """
@@ -175,10 +182,8 @@ def ask_to_play():
         answer = input("\nWOULD YOU LIKE TO PLAY? [Yes/No]\n ").strip().lower()
     
         if answer == "yes":
-           print("\nLet's play!")
-           # Insert Logic of the game here
-           select_category()
-           # Insert Function for selecting category 
+           print("\nLet's play! Guess the Italian word and defeat the hangman.")
+           
            break # Exit the loop as the user wants to play
         elif answer == "no":
            print("Okay. Ciao!")
@@ -205,6 +210,12 @@ def main():
        little_man_pic() 
        introduction()
        ask_to_play()  
+
+       # Get random word from word banks
+       word = select_category()
+       print("\n")
+       dashed_word(word)
+       print("\n")
        """
        word = get_random_word()
        correctly_guessed_letters = []
