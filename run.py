@@ -35,72 +35,86 @@ import random
 import string
 
 # Category: natural phenomena
-WORD_BANK_ONE = "temporale,pioggia,grandine,vento,arcobaleno,fulmine,tempesta,tuono,maremoto,terremoto,alluvione,frana,valanga,tornado".split(',')
+WORD_BANK_ONE = "temporale,pioggia,grandine,vento,arcobaleno,fulmine,tempesta,tuono,maremoto,terremoto,alluvione,frana,valanga,tornado".split(
+    ","
+)
 
 # Category: months & seasons
-WORD_BANK_TWO = "gennaio,febbraio,marzo,aprile,maggio,giugno,luglio,agosto,settembre,ottobre,novembre,dicembre,primavera,estate,autunno,inverno".split(',')
+WORD_BANK_TWO = "gennaio,febbraio,marzo,aprile,maggio,giugno,luglio,agosto,settembre,ottobre,novembre,dicembre,primavera,estate,autunno,inverno".split(
+    ","
+)
 
 # Category: animals
-WORD_BANK_THREE = "cammello,rinoceronte,elefante,ermellino,bisonte,canguro,lucertola,coccodrillo,anaconda,criceto,cavallo,pantera,delfino,balena,gorilla,antilope,asino,murena,aquila,rondine".split(',')
+WORD_BANK_THREE = "cammello,rinoceronte,elefante,ermellino,bisonte,canguro,lucertola,coccodrillo,anaconda,criceto,cavallo,pantera,delfino,balena,gorilla,antilope,asino,murena,aquila,rondine".split(
+    ","
+)
 
 # Number of attempts
 NUM_ATTEMPTS = 7
 
+
 def little_man_pic():
-        print("  +---+")
-        print("  O   |")
-        print(" /|\\  |")
-        print(" / \\  |")
-        print("     ===")        
+    print("  +---+")
+    print("  O   |")
+    print(" /|\\  |")
+    print(" / \\  |")
+    print("     ===")
 
 
 def little_man_one():
-        print("       ")
-        print("       ")
-        print("       ")
-        print("       ")
-        print("     ===")  
+    print("       ")
+    print("       ")
+    print("       ")
+    print("       ")
+    print("     ===")
+
+
 def little_man_two():
-        print("        ")
-        print("        ")
-        print("        ")
-        print("      |")
-        print("     ===")  
+    print("        ")
+    print("        ")
+    print("        ")
+    print("      |")
+    print("     ===")
+
 
 def little_man_three():
-        print("        ")
-        print("        ")
-        print("      |")
-        print("      |")
-        print("     ===")  
+    print("        ")
+    print("        ")
+    print("      |")
+    print("      |")
+    print("     ===")
+
 
 def little_man_four():
-        print("        ")
-        print("      |")
-        print("      |")
-        print("      |")
-        print("     ===")  
+    print("        ")
+    print("      |")
+    print("      |")
+    print("      |")
+    print("     ===")
+
 
 def little_man_five():
-        print("    --+")
-        print("      |")
-        print("      |")
-        print("      |")
-        print("     ===")  
+    print("    --+")
+    print("      |")
+    print("      |")
+    print("      |")
+    print("     ===")
+
 
 def little_man_six():
-        print("  +---+")
-        print("      |")
-        print("      |")
-        print("      |")
-        print("     ===")  
+    print("  +---+")
+    print("      |")
+    print("      |")
+    print("      |")
+    print("     ===")
+
 
 def little_man_seven():
-        print("  +---+")
-        print("  O   |")
-        print(" /|\\  |")
-        print(" / \\  |")
-        print("     ===")  
+    print("  +---+")
+    print("  O   |")
+    print(" /|\\  |")
+    print(" / \\  |")
+    print("     ===")
 
 
 def introduction():
@@ -120,54 +134,50 @@ def introduction():
     print("as the Italian Hangman, it's a challenging trip.")
     print("\nGuess the word, solve the puzzle, and win the day!")
     print("Or watch the hangman's noose, in the breeze, sway.\n")
-    
+
 
 def get_random_word():
-       """
-       If player selects yes, ask them to select a category. 
-       Depending on the category selected, a random word from the WORD BANK is selected.
-       """
-       categories = {
-             1: "Natural phenomena",
-             2: "Months & Seasons",
-             3: "Animals"
-       }
-       print("\nSelect a category: \n\n 1: Natural phenomena\n 2: Months & Seasons\n 3: Animals\n")
+    """
+    If player selects yes, ask them to select a category.
+    Depending on the category selected, a random word from the WORD BANK is selected.
+    """
+    categories = {1: "Natural phenomena", 2: "Months & Seasons", 3: "Animals"}
+    print(
+        "\nSelect a category: \n\n 1: Natural phenomena\n 2: Months & Seasons\n 3: Animals\n"
+    )
 
-       category_one = categories[1]
-       category_two = categories[2]
-       category_two = categories[3]
-       
-       while True:
-             selection = input("Please indicate the category's number: ")
+    category_one = categories[1]
+    category_two = categories[2]
+    category_two = categories[3]
 
-             if selection in ["1", "2", "3"]:
-                 
-                category_number = int(selection)
-                selected_word_bank = None
-                 
-                if category_number == 1:
-                    selected_word_bank = WORD_BANK_ONE
-                    print("\nCategoria: Fenomeni naturali")
-                    
-                elif category_number == 2:
-                    selected_word_bank = WORD_BANK_TWO
-                    print("\nCategoria: Mesi & stagioni")
-                    
-                elif category_number == 3:
-                    selected_word_bank = WORD_BANK_THREE
-                    print("\nAnimali")
-                    
+    while True:
+        selection = input("Please indicate the category's number: ")
 
-                if selected_word_bank:
-                     random_word = random.choice(selected_word_bank)
-                     
-                     return random_word.upper()
-                
+        if selection in ["1", "2", "3"]:
 
-             else:
-                 print("invalid choice. Please select a valid category. [1, 2, 3]")
-    
+            category_number = int(selection)
+            selected_word_bank = None
+
+            if category_number == 1:
+                selected_word_bank = WORD_BANK_ONE
+                print("\nCategoria: Fenomeni naturali")
+
+            elif category_number == 2:
+                selected_word_bank = WORD_BANK_TWO
+                print("\nCategoria: Mesi & stagioni")
+
+            elif category_number == 3:
+                selected_word_bank = WORD_BANK_THREE
+                print("\nAnimali")
+
+            if selected_word_bank:
+                random_word = random.choice(selected_word_bank)
+
+                return random_word.upper()
+
+        else:
+            print("invalid choice. Please select a valid category. [1, 2, 3]")
+
 
 def dashed_word(word):
     """
@@ -178,9 +188,9 @@ def dashed_word(word):
     used_letters = set()  # Letters user has guessed
 
     # Getting user input
-    word_list = ['_'] * len(word)
+    word_list = ["_"] * len(word)
 
-    while '_' in word_list:
+    while "_" in word_list:
         # Display the current word (e.g., G _ _ T O)
         print("Word: ", " ".join(word_list))
 
@@ -194,40 +204,38 @@ def dashed_word(word):
                     if letter == player_letter:
                         word_list[i] = player_letter
             print("\nYou have used these letters: ", ", ".join(used_letters))
-            print("\nAttempts left:\n")            
+            print("\nAttempts left:\n")
         elif player_letter in used_letters:
             print("You have already used this letter. Guess again.")
         else:
             print("Invalid character. Try again.")
 
     print("Word: ", " ".join(word_list))
-    
+
     return word_list
-
-
 
 
 def ask_to_play():
     """
     Define logic at beginning of the game using a while loop.
-    If 'yes', the game starts. If 'no', the game exits. 
+    If 'yes', the game starts. If 'no', the game exits.
     If a different word from 'yes' or 'no' is selected,
     a message asked the user to enter the correct words.
     """
     while True:
         answer = input("\nWOULD YOU LIKE TO PLAY? [Yes/No]\n ").strip().lower()
-    
+
         if answer == "yes":
-           print("\nLet's play! Guess the Italian word and defeat the hangman.")
-           
-           break # Exit the loop as the user wants to play
+            print("\nLet's play! Guess the Italian word and defeat the hangman.")
+
+            break  # Exit the loop as the user wants to play
         elif answer == "no":
-           print("Okay. Ciao!")
-           # Exit the game
-           return # Exit the function
+            print("Okay. Ciao!")
+            # Exit the game
+            return  # Exit the function
         else:
-           print("Please enter 'Yes' or 'No'")
-    
+            print("Please enter 'Yes' or 'No'")
+
 
 def restart_game():
     """
@@ -235,40 +243,36 @@ def restart_game():
     """
     print("\nWOULD YOU LIKE TO PLAY AGAIN? \n")
     print(input("Yes/No: "))
-        
 
 
-# Main function 
+# Main function
 def main():
-       """
-       Activate the game dynamic:
-       """
-       print()
-       little_man_pic() 
-       introduction()
-       ask_to_play()  
+    """
+    Activate the game dynamic:
+    """
+    print()
+    little_man_pic()
+    introduction()
+    ask_to_play()
 
-       # Get random word from word banks
-       word = get_random_word()
-       print("")
-       current_word = dashed_word(word)
-       print("")
-
-       if ''.join(current_word) == word:
+    # Get random word from word banks
+    word = get_random_word()
+    print("")
+    current_word = dashed_word(word)
+    print("")
+    # Victory condition
+    if "".join(current_word) == word:
         print("Congratulazioni! You've defeated the Italian hangman!\n")
 
-       """ 
+    """ 
        Function to restart the game
        """
-       
-       """
+
+    """
        word = get_random_word()
        correctly_guessed_letters = []
-
-       
 
        for i in range(NUM_ATTEMPTS):
        """
 
-       
 main()
