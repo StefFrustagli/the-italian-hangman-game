@@ -121,10 +121,10 @@ def introduction():
     print("Or watch the hangman's noose, in the breeze, sway.\n")
     
 
-def select_category():
+def get_random_word():
        """
        If player selects yes, ask them to select a category. 
-       Depending on the category selected, a dashed word from the WORD BANK appears.
+       Depending on the category selected, a random word from the WORD BANK is selected.
        """
        categories = {
              1: "Natural phenomena",
@@ -154,10 +154,9 @@ def select_category():
 
                 if selected_word_bank:
                      random_word = random.choice(selected_word_bank)
-                     return random_word
+                     
+                     return random_word.upper()
                 
-                
-                # RETURN RANDOM WORD 
 
              else:
                  print("invalid choice. Please select a valid category. [1, 2, 3]")
@@ -168,8 +167,12 @@ def dashed_word(word):
        Given a word, print the letters that have been guessed. Otherwise, print dashes.
        """
        blanks = ' _ ' * len(word) # Repeat underscoring as many times as the word length   
+       
        print("Word: ", blanks)  
+       print("Letters guessed: ")
        return blanks
+
+
 
 def ask_to_play():
     """
@@ -212,16 +215,23 @@ def main():
        ask_to_play()  
 
        # Get random word from word banks
-       word = select_category()
+       word = get_random_word()
        print("\n")
        dashed_word(word)
        print("\n")
+       """ Function to guess letter
+       print_dashed_word(word, correctly_guessed_letters)
+       mi sa che devo mettere insieme il print dashed word e le lettere corrette
+       """
+       
        """
        word = get_random_word()
        correctly_guessed_letters = []
 
-       print_dashed_word(word, correctly_guessed_letters)
+       
 
        for i in range(NUM_ATTEMPTS):
        """
+
+       
 main()
