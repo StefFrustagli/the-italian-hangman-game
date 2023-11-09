@@ -147,10 +147,13 @@ def get_random_word():
                  
                 if category_number == 1:
                     selected_word_bank = WORD_BANK_ONE
+                    print("\nCategoria: Fenomeni naturali")
                 elif category_number == 2:
                     selected_word_bank = WORD_BANK_TWO
+                    print("\nCategoria: Mesi & stagioni")
                 elif category_number == 3:
                     selected_word_bank = WORD_BANK_THREE
+                    print("\nAnimali")
 
                 if selected_word_bank:
                      random_word = random.choice(selected_word_bank)
