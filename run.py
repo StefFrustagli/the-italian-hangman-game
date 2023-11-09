@@ -35,13 +35,13 @@ import random
 import string
 
 # Category: natural phenomena
-WORD_BANK_ONE = "temporale, pioggia, grandine, vento, arcobaleno, fulmine, tempesta, tuono, maremoto, terremoto, alluvione, frana, valanga, tornado".split(',')
+WORD_BANK_ONE = "temporale,pioggia,grandine,vento,arcobaleno,fulmine,tempesta,tuono,mmaremoto,terremoto,alluvione,frana,valanga,tornado".split(',')
 
 # Category: months & seasons
-WORD_BANK_TWO = "gennaio, febbraio, marzo, aprile, maggio, giugno, luglio, agosto, settembre, ottobre, novembre, dicembre, primavera, estate, autunno, inverno".split(',')
+WORD_BANK_TWO = "gennaio,febbraio,marzo,aprile,maggio,giugno,luglio,agosto,settembre,ottobre,novembre,dicembre,primavera,estate,autunno,inverno".split(',')
 
 # Category: animals
-WORD_BANK_THREE = "cammello, rinoceronte, elefante, ermellino, bisonte, canguro, lucertola, coccodrillo, anaconda, criceto, cavallo, pantera, delfino, balena, gorilla, antilope, asino, murena, aquila, rondine".split(',')
+WORD_BANK_THREE = "cammello,rinoceronte,elefante,ermellino,bisonte,canguro,lucertola,coccodrillo,anaconda,criceto,cavallo,pantera,delfino,balena,gorilla,antilope,asino,murena,aquila,rondine".split(',')
 
 # Number of attempts
 NUM_ATTEMPTS = 7
@@ -170,43 +170,41 @@ def get_random_word():
     
 
 def dashed_word(word):
-       """
-       Given a word, print the letters that have been guessed. Otherwise, print dashes.
-       """
-       blanks = ' _ ' * len(word) # Repeat underscoring as many times as the word length   
-       
-       word_letters = set(word) # Letters in the word
-       alphabet = set(string.ascii_uppercase)
-       used_letters = set() # What the user has guessed
-       
-       print("Word: ", blanks)  
-       # Getting user input
+    """
+    Given a word, print the letters that have been guessed. Otherwise, print dashes.
+    """
+    word_letters = set(word)  # Letters in the word
+    alphabet = set(string.ascii_uppercase)
+    used_letters = set()  # Letters user has guessed
 
-       while len(word) > 0:
+    # Getting user input
+    word_list = ['_'] * len(word)
 
-          player_letter = input("\nGuess a letter: ").upper()
+    while '_' in word_list:
+        # Display the current word (e.g., G _ _ T O)
+        print("Word: ", " ".join(word_list))
 
-          if player_letter in alphabet - used_letters: # To check if the letter wasn't already chosen
-                used_letters.add(player_letter)
-                if player_letter in word_letters:
-                        word_letters.remove(player_letter)
-       
-          elif player_letter in used_letters:
-                print("You have alrerady used this letter. Guess again.")
-          else:
-                print("Invalid letter. Try again.")
+        player_letter = input("\nGuess a letter: ").upper()
+        if player_letter in alphabet - used_letters:
+            used_letters.add(player_letter)
+            if player_letter in word_letters:
+                word_letters.remove(player_letter)
+                print("\nWell done! It's in the word.")
+                for i, letter in enumerate(word):
+                    if letter == player_letter:
+                        word_list[i] = player_letter
+            print("\nYou have used these letters: ", ", ".join(used_letters))
+            print("\nAttempts left:\n")            
+        elif player_letter in used_letters:
+            print("You have already used this letter. Guess again.")
+        else:
+            print("Invalid character. Try again.")
 
+    print("Word: ", " ".join(word_list))
+    print("\nYou have used these letters: ", ", ".join(used_letters))
+    
+    return word_list
 
-
-
-       
-       print("\nYou have used these letters: ", ", ".join(used_letters))
-       print("\nAttempts left: ")
-       print(player_choice)
-       
-
-
-       return blanks
 
 
 
