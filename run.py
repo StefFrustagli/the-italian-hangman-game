@@ -32,6 +32,7 @@
 """
 # Import random module to choose a random word from lists of words
 import random
+import string
 
 # Category: natural phenomena
 WORD_BANK_ONE = "temporale, pioggia, grandine, vento, arcobaleno, fulmine, tempesta, tuono, maremoto, terremoto, alluvione, frana, valanga, tornado".split(',')
@@ -148,12 +149,15 @@ def get_random_word():
                 if category_number == 1:
                     selected_word_bank = WORD_BANK_ONE
                     print("\nCategoria: Fenomeni naturali")
+                    
                 elif category_number == 2:
                     selected_word_bank = WORD_BANK_TWO
                     print("\nCategoria: Mesi & stagioni")
+                    
                 elif category_number == 3:
                     selected_word_bank = WORD_BANK_THREE
                     print("\nAnimali")
+                    
 
                 if selected_word_bank:
                      random_word = random.choice(selected_word_bank)
@@ -171,8 +175,37 @@ def dashed_word(word):
        """
        blanks = ' _ ' * len(word) # Repeat underscoring as many times as the word length   
        
+       word_letters = set(word) # Letters in the word
+       alphabet = set(string.ascii_uppercase)
+       used_letters = set() # What the user has guessed
+       
        print("Word: ", blanks)  
-       print("Letters guessed: ")
+       # Getting user input
+
+       while len(word) > 0:
+
+          player_letter = input("\nGuess a letter: ").upper()
+
+          if player_letter in alphabet - used_letters: # To check if the letter wasn't already chosen
+                used_letters.add(player_letter)
+                if player_letter in word_letters:
+                        word_letters.remove(player_letter)
+       
+          elif player_letter in used_letters:
+                print("You have alrerady used this letter. Guess again.")
+          else:
+                print("Invalid letter. Try again.")
+
+
+
+
+       
+       print("\nYou have used these letters: ", ", ".join(used_letters))
+       print("\nAttempts left: ")
+       print(player_choice)
+       
+
+
        return blanks
 
 
@@ -221,10 +254,12 @@ def main():
        word = get_random_word()
        print("\n")
        dashed_word(word)
+      
        print("\n")
+       
        """ Function to guess letter
        print_dashed_word(word, correctly_guessed_letters)
-       mi sa che devo mettere insieme il print dashed word e le lettere corrette
+       
        """
        
        """
