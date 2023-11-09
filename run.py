@@ -35,7 +35,7 @@ import random
 import string
 
 # Category: natural phenomena
-WORD_BANK_ONE = "temporale,pioggia,grandine,vento,arcobaleno,fulmine,tempesta,tuono,mmaremoto,terremoto,alluvione,frana,valanga,tornado".split(',')
+WORD_BANK_ONE = "temporale,pioggia,grandine,vento,arcobaleno,fulmine,tempesta,tuono,maremoto,terremoto,alluvione,frana,valanga,tornado".split(',')
 
 # Category: months & seasons
 WORD_BANK_TWO = "gennaio,febbraio,marzo,aprile,maggio,giugno,luglio,agosto,settembre,ottobre,novembre,dicembre,primavera,estate,autunno,inverno".split(',')
@@ -189,7 +189,7 @@ def dashed_word(word):
             used_letters.add(player_letter)
             if player_letter in word_letters:
                 word_letters.remove(player_letter)
-                print("\nWell done! It's in the word.")
+                print("\nWell done!")
                 for i, letter in enumerate(word):
                     if letter == player_letter:
                         word_list[i] = player_letter
@@ -201,7 +201,6 @@ def dashed_word(word):
             print("Invalid character. Try again.")
 
     print("Word: ", " ".join(word_list))
-    print("\nYou have used these letters: ", ", ".join(used_letters))
     
     return word_list
 
@@ -244,20 +243,22 @@ def main():
        """
        Activate the game dynamic:
        """
+       print()
        little_man_pic() 
        introduction()
        ask_to_play()  
 
        # Get random word from word banks
        word = get_random_word()
-       print("\n")
-       dashed_word(word)
-      
-       print("\n")
-       
-       """ Function to guess letter
-       print_dashed_word(word, correctly_guessed_letters)
-       
+       print("")
+       current_word = dashed_word(word)
+       print("")
+
+       if ''.join(current_word) == word:
+        print("Congratulazioni! You've defeated the Italian hangman!\n")
+
+       """ 
+       Function to restart the game
        """
        
        """
