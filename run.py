@@ -175,12 +175,10 @@ def dashed_word(word):
             elif player_letter not in word_letters:
                 print("\nThe letter is not in the word.")
                 global num_attempts # Use global variable
-                num_attempts -= 1
-
-
-                for i, letter in enumerate(word):
-                    if letter == player_letter:
-                        word_list[i] = player_letter
+                num_attempts -= 1 
+            for i, letter in enumerate(word):
+                if letter == player_letter:
+                     word_list[i] = player_letter
             print("\nYou have used these letters: ", ", ".join(used_letters))
             print("\nAttempts left: ", num_attempts)
         elif player_letter in used_letters:
@@ -192,6 +190,9 @@ def dashed_word(word):
 
     return word_list
 
+
+# def print_hangman_pic():
+        
 
 def ask_to_play():
     """
