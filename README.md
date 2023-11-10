@@ -24,9 +24,11 @@ Save the little man from the Italian hangman by identifying the words correctly.
 *So guess away - don't let your chances slip,* <br>
 *as the Italian Hangman, it's a challenging trip.* <br>
 *Guess the word, solve the puzzle, and win the day!* <br>
-*Or watch the hangman's noose, in the breeze, sway.*<br> ??? persona verbo corretta?
+*Or watch the hangman's noose, in the breeze, sway.*<br> 
 
 ## Flowchart
+
+add flow chart here
 
 ## Game Dynamic 
 Here are some notes I took before realising the project:
