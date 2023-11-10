@@ -22,7 +22,7 @@ WORD_BANK_THREE = "cammello,rinoceronte,elefante,ermellino,bisonte,canguro,lucer
 )
 
 # Number of attempts
-NUM_ATTEMPTS = 7
+num_attempts = 7
 
 
 def little_man_pic():
@@ -169,14 +169,20 @@ def dashed_word(word):
         player_letter = input("\nGuess a letter: ").upper()
         if player_letter in alphabet - used_letters:
             used_letters.add(player_letter)
-            if player_letter in word_letters:
+            if player_letter in word_letters: # Check if the letter guessed is in the word
                 word_letters.remove(player_letter)
                 print("\nWell done!")
+            elif player_letter not in word_letters:
+                print("\nThe letter is not in the word.")
+                global num_attempts # Use global variable
+                num_attempts -= 1
+
+
                 for i, letter in enumerate(word):
                     if letter == player_letter:
                         word_list[i] = player_letter
             print("\nYou have used these letters: ", ", ".join(used_letters))
-            print("\nAttempts left:\n")
+            print("\nAttempts left: ", num_attempts)
         elif player_letter in used_letters:
             print("You have already used this letter. Guess again.")
         else:
@@ -232,9 +238,6 @@ def restart_game():
             print("Please enter 'Yes' or 'No'")    
 
     
-
-    
-
 
 
 # Main function
