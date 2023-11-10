@@ -2,12 +2,6 @@
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
-
-
-   
-
-
-
 # Import random module to choose a random word from lists of words
 import random
 import string
@@ -219,8 +213,28 @@ def restart_game():
     """
     When player wins or loses, ask if they want to restart the game
     """
-    print("\nWOULD YOU LIKE TO PLAY AGAIN? \n")
-    print(input("Yes/No: "))
+    restart_game_dynamic = get_random_word # Store the function reference
+    print("\nWOULD YOU LIKE TO PLAY AGAIN?")
+
+    while True:
+        answer = input("[Yes/No]: ").strip().lower()
+
+        if answer == "yes":
+            print("\nLet's have another go! Guess the Italian word and save the little man.")
+            get_random_word()
+
+            break  # Exit the loop as the user wants to play
+        elif answer == "no":
+            print("Okay. Alla prossima!")
+            # Exit the game
+            return  # Exit the function
+        else:
+            print("Please enter 'Yes' or 'No'")    
+
+    
+
+    
+
 
 
 # Main function
@@ -232,6 +246,7 @@ def main():
     little_man_pic()
     introduction()
     ask_to_play()
+    restart = restart_game
 
     # Get random word from word banks
     word = get_random_word()
@@ -241,6 +256,8 @@ def main():
     # Victory condition
     if "".join(current_word) == word:
         print("Congratulazioni! You've defeated the Italian hangman!\n")
+        restart_game()
+
 
     """ 
        Function to restart the game
