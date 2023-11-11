@@ -146,7 +146,7 @@ def get_random_word():
         else:
             print("invalid choice. Please select a valid category. [1, 2, 3]")
 
-def game_dynamic(word, num_attempts):
+def print_dashed_word(word, num_attempts):
     """
     Given a word, print the letters that have been guessed. Otherwise, print dashes.
     """
@@ -220,7 +220,7 @@ def restart_game():
             
             num_attempts = 7
             word = get_random_word()
-            game_dynamic(word, 7)
+            print_dashed_word(word, 7)
             break  # Exit the loop as the user wants to play
         elif answer == "no":
             print("Okay. Alla prossima!")
@@ -229,7 +229,7 @@ def restart_game():
         else:
             print("Please enter 'Yes' or 'No'")   
 #def print_hangman_pic(num_attempts):
-        #result = game_dynamic(word, num_attempts) # Tuple
+        #result = prin_dashed_word(word, num_attempts) # Tuple
         #word_list, num_attempts = result # Unpacking tuple
 
         #if num_attempts == 7:
@@ -276,8 +276,8 @@ def main():
     # Get random word from word banks
     word = get_random_word()
     print("")
-    # Get result from game_dynamic
-    current_word, attempts_left = dashed_word(word, num_attempts) 
+    # Get result from print_dashed_word
+    current_word, attempts_left = print_dashed_word(word, num_attempts) 
 
     print("")
     # Victory condition
