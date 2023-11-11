@@ -146,28 +146,6 @@ def get_random_word():
         else:
             print("invalid choice. Please select a valid category. [1, 2, 3]")
 
-def restart_game():
-    """
-    When player wins or loses, ask if they want to restart the game
-    """
-    restart_game_dynamic = get_random_word # Store the function reference
-    print("\nWOULD YOU LIKE TO PLAY AGAIN?")
-
-    while True:
-        answer = input("[Yes/No]: ").strip().lower()
-
-        if answer == "yes":
-            print("\nHave another go! Guess the Italian word and save the little man.")
-            get_random_word()
-
-            break  # Exit the loop as the user wants to play
-        elif answer == "no":
-            print("Okay. Alla prossima!")
-            # Exit the game
-            return  # Exit the function
-        else:
-            print("Please enter 'Yes' or 'No'")    
-
 def dashed_word(word, num_attempts):
     """
     Given a word, print the letters that have been guessed. Otherwise, print dashes.
@@ -209,6 +187,7 @@ def dashed_word(word, num_attempts):
                         print(little_man_seven())
                         print("HAI PERSO")
                         print("La parola era: ", word)
+                        used_letters.clear()
                         restart_game()                        
 
 
@@ -226,7 +205,29 @@ def dashed_word(word, num_attempts):
 
     return word_list, num_attempts
 
+def restart_game():
+    """
+    When player wins or loses, ask if they want to restart the game
+    """
+    restart_game_dynamic = get_random_word # Store the function reference
+    print("\nWOULD YOU LIKE TO PLAY AGAIN?")
 
+    while True:
+        answer = input("[Yes/No]: ").strip().lower()
+
+        if answer == "yes":
+            print("\nHave another go! Guess the Italian word and save the little man.")
+            
+            num_attempts = 7
+            word = get_random_word()
+            dashed_word(word, 7)
+            break  # Exit the loop as the user wants to play
+        elif answer == "no":
+            print("Okay. Alla prossima!")
+            # Exit the game
+            return  # Exit the function
+        else:
+            print("Please enter 'Yes' or 'No'")   
 #def print_hangman_pic(num_attempts):
         #result = dashed_word(word, num_attempts) # Tuple
         #word_list, num_attempts = result # Unpacking tuple
@@ -283,6 +284,7 @@ def main():
     if "".join(current_word) == word:
         print("CONGRATULAZIONI! You've defeated the Italian hangman!\n")
         restart_game()
+        
     #if num_attempts == 0:
     #    restart_game()
 
