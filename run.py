@@ -185,10 +185,11 @@ def print_dashed_word(word, num_attempts):
                         print(little_man_six())
                 else:
                         print(little_man_seven())
-                        print("HAI PERSO")
-                        print("La parola era: ", word)
-                        used_letters.clear()
-                        restart_game()                        
+                        #print("HAI PERSO")
+                       # print("La parola era: ", word)
+                        #used_letters.clear()
+                       # restart_game()
+                        break                        
 
 
             for i, letter in enumerate(word): # Loop iterates over each letter in the target
@@ -207,9 +208,9 @@ def print_dashed_word(word, num_attempts):
 
 def restart_game():
     """
-    When player wins or loses, ask if they want to restart the game
+    When player wins or loses, ask if they want to restart the game and reset both word and number of attempts.
     """
-    restart_game_dynamic = get_random_word # Store the function reference
+    #restart_game_dynamic = get_random_word # Store the function reference
     print("\nWOULD YOU LIKE TO PLAY AGAIN?")
 
     while True:
@@ -225,9 +226,10 @@ def restart_game():
         elif answer == "no":
             print("Okay. Alla prossima!")
             # Exit the game
-            return  # Exit the function
+            break  # Exit the function
         else:
             print("Please enter 'Yes' or 'No'")   
+
 #def print_hangman_pic(num_attempts):
         #result = prin_dashed_word(word, num_attempts) # Tuple
         #word_list, num_attempts = result # Unpacking tuple
@@ -262,7 +264,7 @@ def ask_to_play():
 # Main function
 def main():    
     """
-    Activate the game dynamic:
+    Activate and end the game dynamic
     """
     num_attempts = 7 # Number of attempts 
     restart = restart_game
@@ -276,15 +278,22 @@ def main():
     # Get random word from word banks
     word = get_random_word()
     print("")
-    # Get result from print_dashed_word
-    current_word, attempts_left = print_dashed_word(word, num_attempts) 
 
-    print("")
-    # Victory condition
-    if "".join(current_word) == word:
-        print("CONGRATULAZIONI! You've defeated the Italian hangman!\n")
+    while num_attempts > 0: 
+        # Get result from print_dashed_word
+        current_word, attempts_left = print_dashed_word(word, num_attempts) 
+
+        print("")
+        # Victory condition
+        if "".join(current_word) == word:
+             print("CONGRATULAZIONI! You've defeated the Italian hangman!\n")
+             restart_game()
+             break
+    if num_attempts == 0:
+        print("HAI PERSO")
+        print("La parola era: ", word)
+        used_letters.clear()
         restart_game()
-        
     #if num_attempts == 0:
     #    restart_game()
 
