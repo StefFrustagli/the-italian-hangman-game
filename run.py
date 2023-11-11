@@ -164,7 +164,7 @@ def dashed_word(word):
 
     while "_" in word_list:
         # Display the current word (e.g., G _ _ T O)
-        print("Word: ", " ".join(word_list))
+        print("\nWord: ", " ".join(word_list))
 
         player_letter = input("\nGuess a letter: ").upper()
         if player_letter in alphabet - used_letters:
@@ -173,20 +173,20 @@ def dashed_word(word):
                 word_letters.remove(player_letter)
                 print("\nWell done!")
             elif player_letter not in word_letters:
-                print("The letter is not in the word.")
+                print("The letter is not in the word!")
                 global num_attempts # Use global variable
                 num_attempts -= 1 
-            for i, letter in enumerate(word):
-                if letter == player_letter:
-                     word_list[i] = player_letter
-            print("You have used these letters: ", ", ".join(used_letters))
+            for i, letter in enumerate(word): # Loop iterates over each letter in the target
+                if letter == player_letter: # Check if the guessed word matched the letter in the word
+                     word_list[i] = player_letter # The word list at the corresponding index is updating with the letter
+            print("Letters used: ", ", ".join(used_letters))
             print("Attempts left: ", num_attempts)
         elif player_letter in used_letters:
             print("You have already used this letter. Guess again.")
         else:
             print("Invalid character. Try again.")
 
-    print("Word: ", " ".join(word_list))
+    print("\nWord: ", " ".join(word_list))
 
     return word_list
 
@@ -227,7 +227,7 @@ def restart_game():
         answer = input("[Yes/No]: ").strip().lower()
 
         if answer == "yes":
-            print("\nLet's have another go! Guess the Italian word and save the little man.")
+            print("\nHave another go! Guess the Italian word and save the little man.")
             get_random_word()
 
             break  # Exit the loop as the user wants to play
@@ -259,7 +259,7 @@ def main():
     print("")
     # Victory condition
     if "".join(current_word) == word:
-        print("Congratulazioni! You've defeated the Italian hangman!\n")
+        print("CONGRATULAZIONI! You've defeated the Italian hangman!\n")
         restart_game()
 
 
