@@ -21,10 +21,6 @@ WORD_BANK_THREE = "cammello,rinoceronte,elefante,ermellino,bisonte,canguro,lucer
     ","
 )
 
-# Number of attempts
-num_attempts = 7
-
-
 def little_man_pic():
     print("  +---+")
     print("  O   |")
@@ -151,7 +147,7 @@ def get_random_word():
             print("invalid choice. Please select a valid category. [1, 2, 3]")
 
 
-def dashed_word(word):
+def dashed_word(word, num_attempts):
     """
     Given a word, print the letters that have been guessed. Otherwise, print dashes.
     """
@@ -162,7 +158,7 @@ def dashed_word(word):
     # Getting user input
     word_list = ["_"] * len(word)
 
-    while "_" in word_list:
+    while "_" in word_list and num_attempts > 0:
         # Display the current word (e.g., G _ _ T O)
         print("\nWord: ", " ".join(word_list))
 
@@ -174,7 +170,7 @@ def dashed_word(word):
                 print("\nWell done!")
             elif player_letter not in word_letters:
                 print("The letter is not in the word!")
-                global num_attempts # Use global variable
+
                 num_attempts -= 1 
             for i, letter in enumerate(word): # Loop iterates over each letter in the target
                 if letter == player_letter: # Check if the guessed word matched the letter in the word
@@ -188,10 +184,10 @@ def dashed_word(word):
 
     print("\nWord: ", " ".join(word_list))
 
-    return word_list
+    return word_list, num_attempts
 
 
-# def print_hangman_pic():
+# def print_hangman_pic(attempts_left):
         
 
 def ask_to_play():
@@ -242,20 +238,23 @@ def restart_game():
 
 
 # Main function
-def main():
+def main():    
     """
     Activate the game dynamic:
     """
+    num_attempts = 7 # Number of attempts 
+    restart = restart_game
+
+    # Introduction
     print()
     little_man_pic()
     introduction()
     ask_to_play()
-    restart = restart_game
-
+    
     # Get random word from word banks
     word = get_random_word()
     print("")
-    current_word = dashed_word(word)
+    current_word, remaining_attempts = dashed_word(word, num_attempts)
     print("")
     # Victory condition
     if "".join(current_word) == word:
