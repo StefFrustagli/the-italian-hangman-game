@@ -3,12 +3,14 @@
 *It's time to play the **Italian hangman game**!*
 This is a Python terminal game that runs on Heroku's mock terminal created by the Code Institute.
 
-This game is intended for intermediate Italian learners and for native Italian children who are learning to read and write. As instructions are given in English, basic English is also required.
-
-
+This game is intended for intermediate Italian learners and for native Italian children who are learning to read and write or native adults. As the instructions are given in English, a basic understanding of English is also required.
 
 ## How to play
-Save the little man from the Italian hangman by identifying the words correctly.  Ten ??? attempts are all you have, so think carefully. To simplify the choice of words, there are 3 categories to select from at the beginning of the game. 
+The goal of the game is to identify the words correctly in order to save the little man from execution. There are seven possible attempts. To simplify guessing, I have identified 3 different categories that the player can select at the beginning of the game.
+
+
+
+# Introductory nursery rhyme 
 
 *In Italy we play a wordy game so grand,* <br>
 *It is the Hangman game! Where letters in the air stand.* <br>
