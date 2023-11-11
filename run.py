@@ -146,9 +146,11 @@ def get_random_word():
         else:
             print("invalid choice. Please select a valid category. [1, 2, 3]")
 
-def print_dashed_word(word, num_attempts):
+def dashed_word_and_pic(word, num_attempts):
     """
-    Given a word, print the letters that have been guessed. Otherwise, print dashes.
+    For a given word, print the letters guessed correctly, otherwise print dashes.
+    If the letter was incorrectly guessed, reduce the number of attempts left 
+    and print a part of the hangman's picture. 
     """
     word_letters = set(word)  # Letters in the word
     alphabet = set(string.ascii_uppercase)
@@ -221,7 +223,7 @@ def restart_game():
             
             num_attempts = 7
             word = get_random_word()
-            print_dashed_word(word, 7)
+            dashed_word_and_pic(word, 7)
             break  # Exit the loop as the user wants to play
         elif answer == "no":
             print("Okay. Alla prossima!")
@@ -257,7 +259,7 @@ def ask_to_play():
         elif answer == "no":
             print("Okay. Ciao!")
             # Exit the game
-            return  # Exit the function
+            break  # Exit the function
         else:
             print("Please enter 'Yes' or 'No'")
 
@@ -280,8 +282,8 @@ def main():
     print("")
 
     while num_attempts > 0: 
-        # Get result from print_dashed_word
-        current_word, attempts_left = print_dashed_word(word, num_attempts) 
+        # Get result from dashed_word_and_pic
+        current_word, attempts_left = dashed_word_and_pic(word, num_attempts) 
 
         print("")
         # Victory condition
@@ -296,6 +298,4 @@ def main():
         restart_game()
     #if num_attempts == 0:
     #    restart_game()
-
-
 main()
