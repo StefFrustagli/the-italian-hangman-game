@@ -110,9 +110,9 @@ def get_random_word():
         "\nSelect a category: \n\n 1: Natural phenomena\n 2: Months & Seasons\n 3: Animals\n"
     )
 
-    category_one = categories[1]
-    category_two = categories[2]
-    category_two = categories[3]
+    #category_one = categories[1]
+    #category_two = categories[2]
+    #category_three = categories[3]
 
     while True:
         selection = input("Please indicate the category's number: ")
@@ -138,10 +138,8 @@ def get_random_word():
                 random_word = random.choice(selected_word_bank)
 
                 return random_word.upper()
-
         else:
             print("invalid choice. Please select a valid category. [1, 2, 3]")
-
 
 
 def dashed_word_and_pic(word, num_attempts):
@@ -209,7 +207,6 @@ def hangman_pic(word, num_attempts):
         return little_man_seven()
 """
 
-
 def restart_game():
     """
     When player wins or loses, ask if they want to restart the game and reset both word and number of attempts.
@@ -219,15 +216,14 @@ def restart_game():
 
     while True:
         answer = input("[Yes/No]: ").strip().lower()
-
         if answer == "yes":
             print("\nHave another go! \nGuess the Italian word and save the little man.")
             
             num_attempts = 7
-            
             word = get_random_word()
-            dashed_word_and_pic(word, 7)
-            break  # Exit the loop as the user wants to play
+            #dashed_word_and_pic(word, 7)
+            return num_attempts, word # Return values to the main function
+            #break  # Exit the loop as the user wants to play
         elif answer == "no":
             print("Okay. Alla prossima!")
             # Exit the game
@@ -272,16 +268,19 @@ def main():
     word = get_random_word()
     print("")
 
-    current_word, num_attempts = dashed_word_and_pic(word, num_attempts) 
-   
     # Victory condition
     while True:
+        current_word, num_attempts = dashed_word_and_pic(word, num_attempts) 
         if num_attempts != 0 and "".join(current_word) == word:
             print("")
             print("CONGRATULAZIONI! You have defeated the Italian hangman!\n")
             restart_game()
             break
-        elif num_attempts == 0:
+       # elif num_attempts == 0:
+        #    restart_game()
+         #   break
+        num_attempts, word = restart_game()
+        if not num_attempts:
             restart_game()
             break
 
