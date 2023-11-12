@@ -115,10 +115,9 @@ def get_random_word():
     #category_three = categories[3]
 
     while True:
-        selection = input("Please indicate the category's number: ")
+        selection = input("Please indicate the category's number: \n")
 
         if selection in ["1", "2", "3"]:
-
             category_number = int(selection)
             selected_word_bank = None
 
@@ -132,11 +131,10 @@ def get_random_word():
 
             elif category_number == 3:
                 selected_word_bank = WORD_BANK_THREE
-                print("\nAnimali")
+                print("\nCategoria: Animali")
 
             if selected_word_bank:
                 random_word = random.choice(selected_word_bank)
-
                 return random_word.upper()
         else:
             print("invalid choice. Please select a valid category. [1, 2, 3]")
@@ -159,8 +157,8 @@ def dashed_word_and_pic(word, num_attempts):
         # Display the current word (e.g., G _ _ T O)
         print("\nWord: ", " ".join(word_list))
 
-        player_letter = input("\nGuess a letter: ").upper()
-        print('_____________')
+        player_letter = input("\nGuess a letter: \n").upper()
+        print('____________________')
         if player_letter in alphabet - used_letters:
             used_letters.add(player_letter)
             if player_letter in word_letters: # Check if the letter guessed is in the word
@@ -215,15 +213,14 @@ def restart_game():
     print("\nWOULD YOU LIKE TO PLAY AGAIN?")
 
     while True:
-        answer = input("[Yes/No]: ").strip().lower()
+        answer = input("[Yes/No]: \n").strip().lower()
         if answer == "yes":
             print("\nHave another go! \nGuess the Italian word and save the little man.")
-            
             num_attempts = 7
-            word = get_random_word()
-            #dashed_word_and_pic(word, 7)
-            return num_attempts, word # Return values to the main function
-            #break  # Exit the loop as the user wants to play
+            new_word = get_random_word()
+            print("PRINT 1 IN RESTART: ", new_word)
+            return num_attempts, new_word # Return values to the main function
+
         elif answer == "no":
             print("Okay. Alla prossima!")
             # Exit the game
@@ -266,22 +263,24 @@ def main():
     ask_to_play()
     # Get random word from word banks
     word = get_random_word()
+    print("PRINT 1 MAIN WORD: ", word)
     print("")
 
     # Victory condition
     while True:
         current_word, num_attempts = dashed_word_and_pic(word, num_attempts) 
-        if num_attempts != 0 and "".join(current_word) == word:
+        print("PRINT 2 MAIN ", current_word, num_attempts)
+        if num_attempts != 0 and "".join(current_word) == word: # Compare the joined character with original word
             print("")
             print("CONGRATULAZIONI! You have defeated the Italian hangman!\n")
+            print("PRINT 3 WHILE LOOP MAIN: ", current_word, num_attempts)
             restart_game()
-            break
-       # elif num_attempts == 0:
-        #    restart_game()
-         #   break
-        num_attempts, word = restart_game()
-        if not num_attempts:
+            #return current_word, num_attempts #try to add this becuse game stops when user wins and want to try again 
+        
+        elif num_attempts == 0:
             restart_game()
-            break
+            #return num_attempts
+    
+    
 
 main()
