@@ -140,7 +140,7 @@ def get_random_word():
             print("invalid choice. Please select a valid category. [1, 2, 3]")
 
 
-def dashed_word_and_pic(word, num_attempts):
+def print_dashed_word(word, num_attempts):
     """
     For a given word, print the letters guessed correctly, otherwise print dashes.
     If the letter was incorrectly guessed, reduce the number of attempts left 
@@ -268,7 +268,7 @@ def main():
 
     # Victory condition
     while True:
-        current_word, num_attempts = dashed_word_and_pic(word, num_attempts) 
+        current_word, num_attempts = print_dashed_word(word, num_attempts) 
         print("PRINT 2 MAIN ", current_word, num_attempts)
         if num_attempts != 0 and "".join(current_word) == word: # Compare the joined character with original word
             print("")
