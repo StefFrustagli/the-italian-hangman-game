@@ -188,7 +188,6 @@ def print_dashed_word(word, num_attempts):
 
     return word_list, num_attempts
 
-"""
 def hangman_pic(word, num_attempts):
     if num_attempts == 6:
         return little_man_one()
@@ -204,7 +203,7 @@ def hangman_pic(word, num_attempts):
         return little_man_six()
     else:
         return little_man_seven()
-"""
+
 
 def restart_game(current_word):
     """
