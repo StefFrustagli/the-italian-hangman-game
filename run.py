@@ -1,6 +1,7 @@
 # Import modules
 import random
 import string
+import sys
 
 # Category: natural phenomena
 WORD_BANK_ONE = "temporale,pioggia,grandine,vento,arcobaleno,fulmine,tempesta,tuono,maremoto,terremoto,alluvione,frana,valanga,tornado".split(
@@ -222,10 +223,8 @@ def restart_game(current_word):
             return num_attempts, new_word # Return values to the main function
         elif answer == "no":
             print("Okay. Alla prossima!")
-            # Exit the game
-            break  # Exit the function
-            return 0, None # Default values
-
+            sys.exit()
+            
         else:
             print("Please enter 'Yes' or 'No'")   
 
@@ -246,28 +245,28 @@ def ask_to_play():
             break  # Exit the loop as the user wants to play
         elif answer == "no":
             print("Okay. Ciao!")
-            # Exit the game
-            break  # Exit the function
+            sys.exit()
         else:
             print("Please enter 'Yes' or 'No'")
 
 # Main function
 def main():    
     """
-    Activate and end the game dynamic
+    Activate and end the game dynamic.
+    While True:  Enter into a game loop that continues until the player decides not to play anymore. 
     """
     num_attempts = 7 # Number of attempts 
-    # Introduction
+    # Introduction to the game
     print()
     little_man_pic()
     introduction()
     ask_to_play()
     # Get random word from word banks
-    word = get_random_word()
+    word = get_random_word() # Random word from the word banks stored in the variable called word
     print("PRINT 1 MAIN WORD: ", word)
     print("")
 
-    # Victory condition
+    # Game loop & victory condition
     while True:
         current_word, num_attempts = print_dashed_word(word, num_attempts) 
         print("PRINT 2 MAIN ", current_word, num_attempts)
@@ -275,11 +274,11 @@ def main():
             print("")
             print("CONGRATULAZIONI! You have defeated the Italian hangman!\n")
             print("PRINT 3 WHILE LOOP MAIN: ", current_word, num_attempts)
-            num_attempts, word = restart_game(current_word)
+            num_attempts, word = restart_game(current_word) # Take the returned tuple and unpack it in two variables
             #return current_word, num_attempts #try to add this becuse game stops when user wins and want to try again 
         
         elif num_attempts == 0:
             num_attempts, word = restart_game(current_word)
-            #return num_attempts
+            return num_attempts
     
 main()
