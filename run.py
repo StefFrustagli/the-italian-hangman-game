@@ -205,7 +205,7 @@ def hangman_pic(word, num_attempts):
         return little_man_seven()
 """
 
-def restart_game():
+def restart_game(current_word):
     """
     When player wins or loses, ask if they want to restart the game and reset both word and number of attempts.
     """
@@ -220,11 +220,12 @@ def restart_game():
             new_word = get_random_word()
             print("PRINT 1 IN RESTART: ", new_word)
             return num_attempts, new_word # Return values to the main function
-
         elif answer == "no":
             print("Okay. Alla prossima!")
             # Exit the game
             break  # Exit the function
+            return 0, None # Default values
+
         else:
             print("Please enter 'Yes' or 'No'")   
 
@@ -274,13 +275,11 @@ def main():
             print("")
             print("CONGRATULAZIONI! You have defeated the Italian hangman!\n")
             print("PRINT 3 WHILE LOOP MAIN: ", current_word, num_attempts)
-            restart_game()
+            num_attempts, word = restart_game(current_word)
             #return current_word, num_attempts #try to add this becuse game stops when user wins and want to try again 
         
         elif num_attempts == 0:
-            restart_game()
+            num_attempts, word = restart_game(current_word)
             #return num_attempts
     
-    
-
 main()
