@@ -140,6 +140,21 @@ def get_random_word():
         else:
             print("invalid choice. Please select a valid category. [1, 2, 3]")
 
+def display_hangman(num_attempts):
+    if num_attempts == 6:
+        little_man_one()
+    elif num_attempts == 5:
+        ittle_man_two()
+    elif num_attempts == 4:
+        little_man_three()
+    elif num_attempts == 3:
+        little_man_four()
+    elif num_attempts == 2:
+        little_man_five()
+    elif num_attempts == 1:
+        little_man_six()
+    else:
+        little_man_seven()
 
 def print_dashed_word(word, num_attempts):
     """
@@ -150,24 +165,22 @@ def print_dashed_word(word, num_attempts):
     word_letters = set(word)  # Letters in the word
     alphabet = set(string.ascii_uppercase)
     used_letters = set()  # Letters user has guessed
-
-    # Getting user input
-    word_list = ["_"] * len(word)
+    word_list = ["_"] * len(word) 
 
     while "_" in word_list and num_attempts > 0:
         # Display the current word (e.g., G _ _ T O)
         print("\nWord: ", " ".join(word_list))
-
-        player_letter = input("\nGuess a letter: \n").upper()
-        print('____________________')
-        if player_letter in alphabet - used_letters:
-            used_letters.add(player_letter)
+        player_letter = input("\nGuess a letter: \n").upper() # Letter guessed by player
+        print('____________________') # To separate blocks
+        
+        if player_letter in alphabet - used_letters: # If player_letter is in the set of letters in alphabet that ARE NOT in used_letters (guessed yet)
+            used_letters.add(player_letter) # Add those letters in the set of letters already guessed (used_letters)
             if player_letter in word_letters: # Check if the letter guessed is in the word
-                word_letters.remove(player_letter)
+                word_letters.remove(player_letter) # If it is, remove the player's letter (the letter guessed) from the word's letter 
                 print("\nWell done! Correct letter.")
             elif player_letter not in word_letters:
-                print("\nThe letter is not in the word!\n")
-                num_attempts -= 1 
+                print("\nThe letter is not in the word! Try again.\n")
+                num_attempts -= 1 # Number of attempts decreases by 1
                 if num_attempts == 0:
                     print("Attempts left: ", num_attempts)
                     print("YOU LOST / HAI PERSO")
@@ -187,22 +200,6 @@ def print_dashed_word(word, num_attempts):
     print("\nWord: ", " ".join(word_list))
 
     return word_list, num_attempts
-
-def hangman_pic(word, num_attempts):
-    if num_attempts == 6:
-        return little_man_one()
-    elif num_attempts == 5:
-        return little_man_two()
-    elif num_attempts == 4:
-        return little_man_three()
-    elif num_attempts == 3:
-        return little_man_four()
-    elif num_attempts == 2:
-        return little_man_five()
-    elif num_attempts == 1:
-        return little_man_six()
-    else:
-        return little_man_seven()
 
 
 def restart_game(current_word):
@@ -266,8 +263,9 @@ def main():
     print("")
 
     # Game loop & victory condition
-    while True:
+    while True:     
         current_word, num_attempts = print_dashed_word(word, num_attempts) 
+        
         print("PRINT 2 MAIN ", current_word, num_attempts)
         if num_attempts != 0 and "".join(current_word) == word: # Compare the joined character with original word
             print("")
