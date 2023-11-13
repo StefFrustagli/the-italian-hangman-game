@@ -144,7 +144,7 @@ def display_hangman(num_attempts):
     if num_attempts == 6:
         little_man_one()
     elif num_attempts == 5:
-        ittle_man_two()
+        little_man_two()
     elif num_attempts == 4:
         little_man_three()
     elif num_attempts == 3:
@@ -181,6 +181,8 @@ def print_dashed_word(word, num_attempts):
             elif player_letter not in word_letters:
                 print("\nThe letter is not in the word! Try again.\n")
                 num_attempts -= 1 # Number of attempts decreases by 1
+                display_hangman(num_attempts)
+
                 if num_attempts == 0:
                     print("Attempts left: ", num_attempts)
                     print("YOU LOST / HAI PERSO")
