@@ -4,19 +4,14 @@ import string
 import sys
 
 # Category: natural phenomena
-WORD_BANK_ONE = "temporale,pioggia,grandine,vento,arcobaleno,fulmine,tempesta,tuono,maremoto,terremoto,alluvione,frana,valanga,tornado".split(
-    ","
-)
+WORD_BANK_ONE = ["temporale", "pioggia", "grandine", "vento", "arcobaleno", "fulmine", "tempesta", "tuono", "maremoto", "terremoto", "alluvione", "frana", "valanga", "tornado"]
 
 # Category: months & seasons
-WORD_BANK_TWO = "gennaio,febbraio,marzo,aprile,maggio,giugno,luglio,agosto,settembre,ottobre,novembre,dicembre,primavera,estate,autunno,inverno".split(
-    ","
-)
+WORD_BANK_TWO = ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre", "primavera", "estate", "autunno", "inverno"]
 
 # Category: animals
-WORD_BANK_THREE = "cammello,rinoceronte,elefante,ermellino,bisonte,canguro,lucertola,coccodrillo,anaconda,criceto,cavallo,pantera,delfino,balena,gorilla,antilope,asino,murena,aquila,rondine".split(
-    ","
-)
+WORD_BANK_THREE = ["cammello", "rinoceronte", "elefante", "ermellino", "bisonte", "canguro", "lucertola", "coccodrillo", "anaconda", "criceto", "cavallo", "pantera", "delfino", "balena", "gorilla", "antilope", "asino", "murena", "aquila", "rondine"]
+
 
 def little_man_pic():
     print("  +---+")
