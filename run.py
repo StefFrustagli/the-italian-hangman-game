@@ -181,15 +181,14 @@ def print_dashed_word(word, num_attempts):
             elif player_letter not in word_letters:
                 print("\nThe letter is not in the word! Try again.\n")
                 num_attempts -= 1 # Number of attempts decreases by 1
-                display_hangman(num_attempts)
-
+                display_hangman(num_attempts) # Display the hangman image corresponding to the remaining attempts
                 if num_attempts == 0:
                     print("Attempts left: ", num_attempts)
                     print("YOU LOST / HAI PERSO")
                     print("The word was / La parola era: ", word)
                     used_letters.clear()
                     return word_list, num_attempts
-            for i, letter in enumerate(word): # Loop iterates over each letter in the target
+            for i, letter in enumerate(word): # Loop iterates over each letter in the target and enumerate returns pairs of indices and elements of the word
                 if letter == player_letter: # Check if the guessed word matched the letter in the word
                      word_list[i] = player_letter # The word list at the corresponding index is updating with the letter
             print("Letters used: ", ", ".join(used_letters))
@@ -275,9 +274,11 @@ def main():
             print("PRINT 3 WHILE LOOP MAIN: ", current_word, num_attempts)
             num_attempts, word = restart_game(current_word) # Take the returned tuple and unpack it in two variables
             #return current_word, num_attempts #try to add this becuse game stops when user wins and want to try again 
+            continue
         
         elif num_attempts == 0:
             num_attempts, word = restart_game(current_word)
-            return num_attempts
+            # return num_attempts
+            continue
     
 main()
