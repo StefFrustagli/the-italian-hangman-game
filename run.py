@@ -4,13 +4,66 @@ import string
 import sys
 
 # Category: natural phenomena
-WORD_BANK_ONE = ["temporale", "pioggia", "grandine", "vento", "arcobaleno", "fulmine", "tempesta", "tuono", "maremoto", "terremoto", "alluvione", "frana", "valanga", "tornado"]
+WORD_BANK_ONE = [
+    "temporale",
+    "pioggia",
+    "grandine",
+    "vento",
+    "arcobaleno",
+    "fulmine",
+    "tempesta",
+    "tuono",
+    "maremoto",
+    "terremoto",
+    "alluvione",
+    "frana",
+    "valanga",
+    "tornado",
+]
 
 # Category: months & seasons
-WORD_BANK_TWO = ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre", "primavera", "estate", "autunno", "inverno"]
+WORD_BANK_TWO = [
+    "gennaio",
+    "febbraio",
+    "marzo",
+    "aprile",
+    "maggio",
+    "giugno",
+    "luglio",
+    "agosto",
+    "settembre",
+    "ottobre",
+    "novembre",
+    "dicembre",
+    "primavera",
+    "estate",
+    "autunno",
+    "inverno",
+]
 
 # Category: animals
-WORD_BANK_THREE = ["cammello", "rinoceronte", "elefante", "ermellino", "bisonte", "canguro", "lucertola", "coccodrillo", "anaconda", "criceto", "cavallo", "pantera", "delfino", "balena", "gorilla", "antilope", "asino", "murena", "aquila", "rondine"]
+WORD_BANK_THREE = [
+    "cammello",
+    "rinoceronte",
+    "elefante",
+    "ermellino",
+    "bisonte",
+    "canguro",
+    "lucertola",
+    "coccodrillo",
+    "anaconda",
+    "criceto",
+    "cavallo",
+    "pantera",
+    "delfino",
+    "balena",
+    "gorilla",
+    "antilope",
+    "asino",
+    "murena",
+    "aquila",
+    "rondine",
+]
 
 
 def little_man_pic():
@@ -131,6 +184,7 @@ def get_random_word():
         else:
             print("invalid choice. Please select a valid category. [1, 2, 3]")
 
+
 def display_hangman(num_attempts):
     if num_attempts == 6:
         little_man_one()
@@ -147,40 +201,59 @@ def display_hangman(num_attempts):
     else:
         little_man_seven()
 
+
 def print_dashed_word(word, num_attempts):
     """
     For a given word, print the letters guessed correctly, otherwise print dashes.
-    If the letter was incorrectly guessed, reduce the number of attempts left 
-    and print a part of the hangman's picture. 
+    If the letter was incorrectly guessed, reduce the number of attempts left
+    and print a part of the hangman's picture.
     """
     word_letters = set(word)  # Letters in the word
     alphabet = set(string.ascii_uppercase)
     used_letters = set()  # Letters user has guessed
-    word_list = ["_"] * len(word) 
+    word_list = ["_"] * len(word)
 
     while "_" in word_list and num_attempts > 0:
         # Display the current word (e.g., G _ _ T O)
         print("\nWord: ", " ".join(word_list))
-        player_letter = input("\nGuess a letter: \n").upper() # Letter guessed by player
-        print('________________________________\n') # To separate blocks
-        
-        if player_letter in alphabet - used_letters: # If player_letter is in the set of letters in alphabet that ARE NOT in used_letters (guessed yet)
-            used_letters.add(player_letter) # Add those letters in the set of letters already guessed (used_letters)
-            if player_letter in word_letters: # Check if the letter guessed is in the word
-                word_letters.remove(player_letter) # If it is, remove the player's letter (the letter guessed) from the word's letter 
+        player_letter = input(
+            "\nGuess a letter: \n"
+        ).upper()  # Letter guessed by player
+        print("________________________________\n")  # To separate blocks
+
+        if (
+            player_letter in alphabet - used_letters
+        ):  # If player_letter is in the set of letters in alphabet that ARE NOT in used_letters (guessed yet)
+            used_letters.add(
+                player_letter
+            )  # Add those letters in the set of letters already guessed (used_letters)
+            if (
+                player_letter in word_letters
+            ):  # Check if the letter guessed is in the word
+                word_letters.remove(
+                    player_letter
+                )  # If it is, remove the player's letter (the letter guessed) from the word's letter
                 print("\nWell done! Correct letter.")
             elif player_letter not in word_letters:
                 print("\nThe letter is not in the word!\n")
-                num_attempts -= 1 # Number of attempts decreases by 1
-                display_hangman(num_attempts) # Display the hangman image corresponding to the remaining attempts
+                num_attempts -= 1  # Number of attempts decreases by 1
+                display_hangman(
+                    num_attempts
+                )  # Display the hangman image corresponding to the remaining attempts
                 if num_attempts == 0:
                     print("\nYOU LOST / HAI PERSO")
                     print("The word was / La parola era: ", word)
                     used_letters.clear()
                     return word_list, num_attempts
-            for i, letter in enumerate(word): # Loop iterates over each letter in the target and enumerate returns pairs of indices and elements of the word
-                if letter == player_letter: # Check if the guessed word matched the letter in the word
-                     word_list[i] = player_letter # The word list at the corresponding index is updating with the letter
+            for i, letter in enumerate(
+                word
+            ):  # Loop iterates over each letter in the target and enumerate returns pairs of indices and elements of the word
+                if (
+                    letter == player_letter
+                ):  # Check if the guessed word matched the letter in the word
+                    word_list[
+                        i
+                    ] = player_letter  # The word list at the corresponding index is updating with the letter
             print("Letters used: ", ", ".join(used_letters))
             print("Attempts left: ", num_attempts)
         elif player_letter in used_letters:
@@ -202,16 +275,19 @@ def restart_game(current_word):
     while True:
         answer = input("[Yes/No]: \n").strip().lower()
         if answer == "yes":
-            print("\nHave another go! \nGuess the Italian word and save the little man.")
+            print(
+                "\nHave another go! \nGuess the Italian word and save the little man."
+            )
             num_attempts = 7
             new_word = get_random_word()
             print("PRINT 1 IN RESTART: ", new_word)
-            return num_attempts, new_word # Return values to the main function
+            return num_attempts, new_word  # Return values to the main function
         elif answer == "no":
             print("Okay. Alla prossima!")
             sys.exit()
         else:
-            print("Please enter 'Yes' or 'No'")   
+            print("Please enter 'Yes' or 'No'")
+
 
 def ask_to_play():
     """
@@ -233,34 +309,42 @@ def ask_to_play():
         else:
             print("Please enter 'Yes' or 'No'")
 
+
 # Main function
-def main():    
+def main():
     """
     Activate and end the game dynamic.
-    While True:  Enter into a game loop that continues until the player decides not to play anymore. 
+    While True:  Enter into a game loop that continues until the player decides not to play anymore.
     """
-    num_attempts = 7 
+    num_attempts = 7
     # Introduction to the game
     print()
     little_man_pic()
     introduction()
     ask_to_play()
     # Get random word from word banks
-    word = get_random_word() # Random word from the word banks stored in the variable called word
+    word = (
+        get_random_word()
+    )  # Random word from the word banks stored in the variable called word
     print("PRINT 1 MAIN WORD: ", word)
     print("")
 
     # Game loop & victory condition
-    while True:     
-        current_word, num_attempts = print_dashed_word(word, num_attempts) 
-        
-        if num_attempts != 0 and "".join(current_word) == word: # Compare the joined character with original word
+    while True:
+        current_word, num_attempts = print_dashed_word(word, num_attempts)
+
+        if (
+            num_attempts != 0 and "".join(current_word) == word
+        ):  # Compare the joined character with original word
             print("")
             print("CONGRATULAZIONI! You have defeated the Italian hangman!\n")
-            num_attempts, word = restart_game(current_word) # Take the returned tuple and unpack it in two variables
+            num_attempts, word = restart_game(
+                current_word
+            )  # Take the returned tuple and unpack it in two variables
             continue
         elif num_attempts == 0:
             num_attempts, word = restart_game(current_word)
             continue
-    
+
+
 main()
