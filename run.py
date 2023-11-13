@@ -111,10 +111,6 @@ def get_random_word():
         "\nSelect a category: \n\n 1: Natural phenomena\n 2: Months & Seasons\n 3: Animals\n"
     )
 
-    #category_one = categories[1]
-    #category_two = categories[2]
-    #category_three = categories[3]
-
     while True:
         selection = input("Please indicate the category's number: \n")
 
@@ -171,7 +167,7 @@ def print_dashed_word(word, num_attempts):
         # Display the current word (e.g., G _ _ T O)
         print("\nWord: ", " ".join(word_list))
         player_letter = input("\nGuess a letter: \n").upper() # Letter guessed by player
-        print('____________________') # To separate blocks
+        print('________________________________\n') # To separate blocks
         
         if player_letter in alphabet - used_letters: # If player_letter is in the set of letters in alphabet that ARE NOT in used_letters (guessed yet)
             used_letters.add(player_letter) # Add those letters in the set of letters already guessed (used_letters)
@@ -179,12 +175,11 @@ def print_dashed_word(word, num_attempts):
                 word_letters.remove(player_letter) # If it is, remove the player's letter (the letter guessed) from the word's letter 
                 print("\nWell done! Correct letter.")
             elif player_letter not in word_letters:
-                print("\nThe letter is not in the word! Try again.\n")
+                print("\nThe letter is not in the word!\n")
                 num_attempts -= 1 # Number of attempts decreases by 1
                 display_hangman(num_attempts) # Display the hangman image corresponding to the remaining attempts
                 if num_attempts == 0:
-                    print("Attempts left: ", num_attempts)
-                    print("YOU LOST / HAI PERSO")
+                    print("\nYOU LOST / HAI PERSO")
                     print("The word was / La parola era: ", word)
                     used_letters.clear()
                     return word_list, num_attempts
@@ -207,7 +202,6 @@ def restart_game(current_word):
     """
     When player wins or loses, ask if they want to restart the game and reset both word and number of attempts.
     """
-    #restart_game_dynamic = get_random_word # Store the function reference
     print("\nWOULD YOU LIKE TO PLAY AGAIN?")
 
     while True:
@@ -221,10 +215,8 @@ def restart_game(current_word):
         elif answer == "no":
             print("Okay. Alla prossima!")
             sys.exit()
-            
         else:
             print("Please enter 'Yes' or 'No'")   
-
 
 def ask_to_play():
     """
@@ -252,7 +244,7 @@ def main():
     Activate and end the game dynamic.
     While True:  Enter into a game loop that continues until the player decides not to play anymore. 
     """
-    num_attempts = 7 # Number of attempts 
+    num_attempts = 7 
     # Introduction to the game
     print()
     little_man_pic()
@@ -267,18 +259,13 @@ def main():
     while True:     
         current_word, num_attempts = print_dashed_word(word, num_attempts) 
         
-        print("PRINT 2 MAIN ", current_word, num_attempts)
         if num_attempts != 0 and "".join(current_word) == word: # Compare the joined character with original word
             print("")
             print("CONGRATULAZIONI! You have defeated the Italian hangman!\n")
-            print("PRINT 3 WHILE LOOP MAIN: ", current_word, num_attempts)
             num_attempts, word = restart_game(current_word) # Take the returned tuple and unpack it in two variables
-            #return current_word, num_attempts #try to add this becuse game stops when user wins and want to try again 
             continue
-        
         elif num_attempts == 0:
             num_attempts, word = restart_game(current_word)
-            # return num_attempts
             continue
     
 main()
