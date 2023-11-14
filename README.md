@@ -3,43 +3,60 @@
 *It's time to play the **Italian hangman game**!*
 This is a Python terminal game that runs on Heroku's mock terminal created by the Code Institute.
 
-This game is intended for intermediate Italian learners and Italians speakers (children or adults) who enjoy simple word guessing games. As the instructions are given in English, a basic understanding of English is also required. It is a classic game in which the player must guess the word letter by letter within seven attempts.
+This game is intended for intermediate Italian learners and Italians speakers (children or adults) who enjoy simple word guessing games. As the instructions are given in English, a basic understanding of English is also required. It is a classic hangman game in which the player must guess the word letter by letter within a certain number of attempts.
 
 
 
 
 
 
-## Flowchart
+## Aspects of projectivity
+### Flowchart
+I created this flowchart when I was planning the logic for the game. Even though it is rough and does not contain all passages, it has helped me develop the game.
 
-add flow chart here
+FLOWCHART
 
-## Game Dynamic 
-Here are some notes I took before realising the project:
+### Game flow
 
-1. User opens terminal. Welcome message appears with nursery rhyme to explain the game.
-2. User asked if they want to play. 
-  2B If 'yes', the game starts. 
-  2C If 'no', the game exits.
-3. If 2.B, the game starts displaying a random dashed version of the word -- 
-   dashes are displayed instead of letters (user knows the length of the word). 
-   When correct letter is guessed, it will replace the dash.
-  3A Info given to the player:
-      - Word: _ _ _ _ _
-      - Length: num
-      - Letters guessed: a, b 
-      - Attempts left: num
+Before realizing the project, I took the following notes:
+1. User opens terminal. Welcome message appears with nursery rhymes to explain the game.
+2. The user is asked if they want to play.
+   - If 'yes', the game starts.
+   - If 'no', the game exits.
+
+3. If user wants to play, the game displays a random dashed version of the word (example: _ _ _ _ )
+ - Dashes are displayed instead of letters (user knows the word length).
+ - When the correct letter is guessed, it replaces the dash.
+ - Information given to the player:
+   - Word: _ _ _ _ _ _ 
+   - Length of the word
+   - Letters guessed: a, b
+   - Attempts left: num
+
 4. User asked to choose a letter.
-5. 5A If letter is wrong, a message appears: "Letter wromg. Try again." 
-      Input to choose another letter. A part of the hangman picture is shown. 
-      It is added at the bottom of the info provided above. 
-      This will happen for seven times, the attempts the player has. 
-      When the picture is complete, the player loses the game
-   5B If the letter is right, the letter will be displayed in the correct position. 
-      The user will be asked to guess again till the attempts end 
-      or the word is completed.
-6. When player loses or wins, a message asking if they want to play again will appear. 
-   Return to point 2.   
+
+5. A message appears: 
+   - if the letter is incorrect: "Letter wrong. Please try again."
+      - A part of the hangman picture is shown. 
+   - if the letter is correct: "Well done"
+
+6. User is asked to input another letter. 
+   - It will be added at the bottom of the info provided.
+   - This will happen seven times, depending on how many attempts the player has.
+   - When the picture is complete, the player loses the game.
+   - It will be displayed in the correct position if the letter is correct.
+   - Until the user completes the word or the attempts are over, the user will be asked to guess again.
+
+7. If the player loses or wins, a message will ask if they wish to play again.
+
+8 - User is asked if the want to play again. Return to point 3.
+
+### Game Dynamic 
+
+
+
+
+
 
 ## Table of Contents
 
