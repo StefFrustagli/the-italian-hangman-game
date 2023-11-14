@@ -160,7 +160,7 @@ def get_random_word():
     )
 
     while True:
-        selection = input(" Please indicate the category's number: \n")
+        selection = input(" Please indicate the category's number: \n ")
 
         if selection in ["1", "2", "3"]:
             category_number = int(selection)
@@ -217,7 +217,7 @@ def print_dashed_word(word, num_attempts):
         # Display the current word (e.g., G _ _ T O)
         print("\n Word: ", " ".join(word_list))
         player_letter = input(
-            "\n Guess a letter: \n"
+            "\n Guess a letter: \n "
         ).upper()  # Letter guessed by player
         print(" ________________________________\n")  # To separate blocks
 
@@ -273,7 +273,7 @@ def restart_game(current_word):
     print("\n WOULD YOU LIKE TO PLAY AGAIN?")
 
     while True:
-        answer = input("[Yes/No]: \n").strip().lower()
+        answer = input("[Yes/No]: \n ").strip().lower()
         if answer == "yes":
             print(
                 "\n Have another go! \nGuess the Italian word and save the little man."
