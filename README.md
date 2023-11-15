@@ -6,9 +6,9 @@ This is a Python terminal game that runs on Heroku's mock terminal created by th
 
 This game is intended for intermediate Italian learners and Italians speakers (children or adults) who enjoy simple word guessing games. As the instructions are given in English, a basic understanding of English is also required. It is a classic version of the game in which the player must guess the word letter by letter within a certain number of attempts.
 
-[View the live project here: ]()
+[View the live project here: ](https://the-italian-hangman-game-c1a71b18c016.herokuapp.com/)
 
-![Responsice Mockup]()
+![Responsice Mockup]() ADD MOCKUP
 
 
 ## Table of Contents
@@ -24,7 +24,7 @@ This game is intended for intermediate Italian learners and Italians speakers (c
 
 ### Project's goal & Design 
 
-The idea was to make a simple and essential game that had a retro appeal. I wanted to limit possible aesthetic improvements and let the player experience the pure joy or frustration of guessing words. The game mechanics were designed to be straightforward and immediate. As a result, the game is fast and can be enjoyed during a study or work break.
+The idea was to make a simple and essential game with a retro appeal. I wanted to limit possible aesthetic improvements and let the player experience the pure joy or frustration of guessing words. The game mechanics were designed to be straightforward and immediate. As a result, the game is fast and can be enjoyed during a study or work break.
 
 ### Ideal players
 
@@ -112,7 +112,7 @@ During the planning process, I took the following notes:
 ## Features and game functionalities
 
 ### How to play
-The goal of the game is to identify the words correctly in order to save the little man from execution. There are seven possible attempts. To simplify guessing, I have identified 3 different categories that the player can select at the beginning of the game.
+The goal of the game is to identify the word correctly in order to save the little man from execution. There are seven possible attempts. To simplify guessing, I have identified 3 different categories that the player can select at the beginning of the game.
 
 ### Existing Features
 

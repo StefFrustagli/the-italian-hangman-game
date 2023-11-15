@@ -68,11 +68,11 @@ WORD_BANK_THREE = [
 
 
 def little_man_pic():
-    print("   +---+")
-    print("   O   |")
-    print("  /|\\  |")
-    print("  / \\  |")
-    print("      ===")
+    print("      +---+")
+    print("       O  |")
+    print("      /|\\ |")
+    print("      / \\ |")
+    print("         ===")
 
 
 def little_man_one():
@@ -138,6 +138,7 @@ def introduction():
     Provides an introductory rhyme and instructions 
     for playing the game.
     """
+    print("")
     print("\n  WELCOME TO THE ITALIAN HANGMAN GAME\n")
     # Display introductory rhyme    
     print("  In Italy we play a wordy game so grand,")
