@@ -296,8 +296,8 @@ def print_dashed_word(word, num_attempts):
                     num_attempts
                 )  # Display the hangman image based on attempts
                 if num_attempts == 0:  # If attempts run out, the player loses
-                    print("\n  YOU LOST / HAI PERSO")
-                    print("  The word was / La parola era: ", word)
+                    print("\n  YOU LOST!")
+                    print("  The Italian word was: ", word)
                     used_letters.clear()  # Clear used_letters
                     return word_list, num_attempts
             # Update the word list to reveal correctly guessed letters        
@@ -373,7 +373,8 @@ def ask_to_play():
       it asks for a correct input.
     """
     while True:
-        answer = input("\n  WOULD YOU LIKE TO PLAY? [Yes/No]\n  ").strip().lower()
+        answer = input("  WOULD YOU LIKE TO PLAY? [Yes/No]\n  ").strip().lower()
+        print("")
 
         if answer == "yes":
             print("\n  Let's play! Guess the Italian word and defeat the hangman.")

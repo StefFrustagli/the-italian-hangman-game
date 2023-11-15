@@ -6,6 +6,11 @@ This is a Python terminal game that runs on Heroku's mock terminal created by th
 
 This game is intended for intermediate Italian learners and Italians speakers (children or adults) who enjoy simple word guessing games. As the instructions are given in English, a basic understanding of English is also required. It is a classic version of the game in which the player must guess the word letter by letter within a certain number of attempts.
 
+[View the live project here: ]()
+
+![Responsice Mockup]()
+
+
 ## Table of Contents
 
 - [User Experience (UX)](#user-experience)
