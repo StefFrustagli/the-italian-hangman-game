@@ -116,6 +116,13 @@ The goal of the game is to identify the word correctly in order to save the litt
 ### Existing Features
 
 #### Introduction
+When the terminal is open, a classic Hangman game picture is displayed.
+[PIC]
+Afterwards, a message welcoming the player is accompanied by a nursery rhyme that gives a jolly introduction to the game. As an alternative to the usual rules list, I came up with something that tries to grab the user's attention.
+
+[PIC terminal]
+
+After that, the user is given a line of instructions with the number of attempts they have in order to guess the word. This is followed by an invitation to play, in capital letters, to which the user can reply and start the game dynamic.
 
 ##### Introductory nursery rhyme 
 
@@ -135,6 +142,7 @@ The goal of the game is to identify the word correctly in order to save the litt
 *Guess the word, solve the puzzle, and win the day!* <br>
 *Or watch the hangman's noose, in the breeze, sway.*<br> 
 
+#### Game dynamic
 
 ### Future features and general aspects left to implement
 - Increase the number of words in the bank.
@@ -180,4 +188,4 @@ As this was my first time building a game with
 
 ### Acknowledgment
 
-For their support, suggestions and feedback, I am very grateful to my mentor Brian Macharia and my fellow classmates on Slack, in particular I want to thank Niclas for his precious support.
+For their support, suggestions and feedback, I am very grateful to my mentor Brian Macharia and the other students on Slack, in particular to my classmate Niclas for his precious support.
