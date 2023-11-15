@@ -142,29 +142,28 @@ After that, the user is given a line of instructions with the number of attempts
 *Guess the word, solve the puzzle, and win the day!* <br>
 *Or watch the hangman's noose, in the breeze, sway.*<br> 
 
-#### Game dynamic
+#### User interactions 
+
+
+
 
 ### Future features and general aspects left to implement
-- Increase the number of words in the bank.
+- Increase the number of words in the word bank.
 - Provide more categories to choose from. 
-- Add a tracking score to Keep track of players' progress.
+- Add a tracking score to keep track of players' progress.
 
 
 ## Technologies used
-### Languages
 
-- The only program language used in this project is **Python3**
-
-### Frameworks, Programs & Libraries
-
-- [GitHub Pages:](https://pages.github.com/) is where the site is hosted.
-- [Git:](https://git-scm.com/) was used for version control by utilising the Gitpod terminal to commit to Git and Push to GitHub.
-- [GitHub:](https://github.com/) was used as the repository for the project after being pushed from Git.
-- [Codeanywhere](https://codeanywhere.com/) was used as online IDE.
-- [Figma:](https://www.figma.com/) was used to create wireframes during the design process.
-- [Google Fonts:](https://fonts.google.com/) was used to import fonts into the style.css.
-- [Font Awesome:](https://fontawesome.com/) was used to add icons in the footer.
-- [ImgBB:](https://imgbb.com/) was used to upload images and extract the source code.
+- [Python:](https://www.python.org) Hight-level programming language used.
+- [PEP8](http://pep8online.com/) was used to check the code for PEP8 requirements.
+- [Heroku: Cloud Application Platform](https://dashboard.heroku.com/apps) was used for the deployment.
+- [GitHub Pages](https://pages.github.com/) is where the site is hosted.
+- [Git](https://git-scm.com/) was used for version control by utilising the Gitpod terminal to commit to Git and Push to GitHub.
+- [GitHub](https://github.com/) was used as the repository for the project after being pushed from Git.
+- [VSCode](https://code.visualstudio.com/) was used as the primary local Integrated Development Environment (IDE) for coding and development.
+- [Lucidchart](https://www.lucidchart.com/pages/) was used to create a draft flowchart during the planning process.
+- [ImgBB](https://imgbb.com/) was used to upload images and extract the source code.
 - [Am I Responsive?](http://ami.responsivedesign.is) was used to generate the mockup of the website.
 - [Table Convert](https://tableconvert.com/) was used to generate tables for the TESTING.md file.
 
@@ -174,6 +173,39 @@ After that, the user is given a line of instructions with the number of attempts
 Testing information can be found in [TESTING.md file](TESTING.md).
 
 ## Deployment
+
+## Steps to deploy site using Heroku:
+- On the Heroku dashboard, select "New" and click "Create new app"
+  - Create a unique app name
+  - Select your region
+  - Click "Create app"
+- Go to the settings tab:
+  - Scroll down to the config vars section and select "Reveal Config Vars"
+  - Add necessary config vars
+  - In this case, in the key field enter "PORT" and the value field enter "8000"
+  - Click "Add"
+  - Scroll down to Buildpacks and click "Add buildpack"
+  - Add the necessary buildpacks.
+  - In this case, select "python" and click "Save changes"
+  - Then, select "node.js" and click "Save changes"
+- Go to the Deploy tab:
+  - Select GitHub and confirm connection to GitHub account
+  - Search for the repository and click "Connect"
+  - Scroll down to the deploy options
+  - Select automatic deploys if you would like automatic deployment with each new push to the GitHub repository
+  - In manual deploy, select which branch to deploy and click "Deploy Branch"
+  - Heroku will start building the app
+- The link to the app can be found at the top of the page by clicking "Open app"
+
+The live site can be found here: [The Italian Hangman Game]()
+
+## Steps to clone site:
+- In the GitHub repository, click the "Code" button.
+- Select "HTTPS" and copy the URL.
+- Open Git Bash and navigate to the repository where you would like to locate the cloned repository.
+- Type "git clone" followed by the copied URL.
+- Press enter to create the clone.
+
 
 ## Credits
 
@@ -188,4 +220,4 @@ As this was my first time building a game with
 
 ### Acknowledgment
 
-For their support, suggestions and feedback, I am very grateful to my mentor Brian Macharia and the other students on Slack, in particular to my classmate Niclas for his precious support.
+I am very grateful to my mentor Brian Macharia for his suggestions and feedback and to my classmate Niclas for his precious support.
