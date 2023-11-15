@@ -73,14 +73,13 @@ The idea was to make a simple and essential game with a retro appeal. I wanted t
 ### As a developer, I expect:
 - To provide an easy and logical game dynamic.
 - To make the game as clear and simple to play as possible.
-- To provide clear instructions.
-- To provide some fun with a word game.
+- To provide some fun.
 
 ## Aspects of planning
 ### Flowchart
-I created a flowchart when I was planning the logic for the game. Even though it is rough and does not contain all the passages, it has helped me with the development of the game dynamic.
+I created this flowchart when I was planning the logic for the game. Even though it is rough and does not contain all the passages, it has helped me with the development of the game dynamic.
 
-![Flowchart](https://i.ibb.co/tbNrtxM/flowchart.png)
+![Draft flowchart](https://i.ibb.co/tbNrtxM/flowchart.png)
 
 ### Game flow
 
@@ -112,13 +111,13 @@ During the planning process, I took the following notes:
 ## Features and game functionalities
 
 ### How to play
-The goal of the game is to identify the word correctly in order to save the little man from execution. There are seven possible attempts. To simplify guessing, I have identified 3 different categories that the player can select at the beginning of the game.
+The goal of the game is to identify the word correctly in order to save the little man from execution. There are seven possible attempts. As a way of simplifying the guessing game, I have defined three different categories the player can choose from at the beginning.
 
 ### Existing Features
 
-### Introduction
+#### Introduction
 
-#### Introductory nursery rhyme 
+##### Introductory nursery rhyme 
 
 *In Italy we play a wordy game so grand,* <br>
 *It is the Hangman game! Where letters in the air stand.* <br>

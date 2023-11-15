@@ -153,7 +153,7 @@ def introduction():
     print("  as the Italian Hangman, it's a challenging trip.")
     print("\n  Guess the word, solve the puzzle, and win the day!")
     print("  Or watch the hangman's noose, in the breeze, sway.\n")
-    print("")
+    print("  ________________________________\n")  # Visual separation
     print("  You have seven chances to guess the Italian word.")
 
 
