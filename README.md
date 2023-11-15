@@ -1,6 +1,7 @@
 # THE ITALIAN HANGMAN GAME
 
-*It's time to play the **Italian hangman game**!*
+*It's time to play the **Italian hangman game**!*</br>
+</br>
 This is a Python terminal game that runs on Heroku's mock terminal created by the Code Institute.
 
 This game is intended for intermediate Italian learners and Italians speakers (children or adults) who enjoy simple word guessing games. As the instructions are given in English, a basic understanding of English is also required. It is a classic version of the game in which the player must guess the word letter by letter within a certain number of attempts.
@@ -72,21 +73,21 @@ The idea was to make a simple and essential game that had a retro appeal. I want
 
 ## Aspects of planning
 ### Flowchart
-I created this flowchart when I was planning the logic for the game. Even though it is rough and does not contain all the passages, it has helped me develop the game dynamic.
+I created a flowchart when I was planning the logic for the game. Even though it is rough and does not contain all the passages, it has helped me with the development of the game dynamic.
 
-FLOWCHART
+![Flowchart](https://i.ibb.co/tbNrtxM/flowchart.png)
 
 ### Game flow
 
-Before realizing the project, I took the following notes:
+During the planning process, I took the following notes:
 1. User opens terminal. Welcome message appears with nursery rhymes to explain the game.
-2. The user is asked if they want to play.
+2. The user is asked if they want to play:
    - If 'yes', the game starts.
    - If 'no', the game exits.
 3. If user wants to play, the game displays a random dashed version of the word (example: _ _ _ _ )
  - Dashes are displayed instead of letters (user knows the word length).
- - When the correct letter is guessed, it replaces the dash.
- - Information given to the player:
+ - When guessed correctly, the correct letter replaces the dash.
+ - Display for the player:
    - Word: _ _ _ _ _ _ 
    - Length of the word
    - Letters guessed: a, b
@@ -98,21 +99,21 @@ Before realizing the project, I took the following notes:
    - if the letter is correct: "Well done"
 6. User is asked to input another letter. 
    - It will be added at the bottom of the info provided.
-   - This will happen seven times, depending on how many attempts the player has.
-   - When the picture is complete, the player loses the game.
-   - It will be displayed in the correct position if the letter is correct.
-   - Until the user completes the word or the attempts are over, the user will be asked to guess again.
-7. If the player loses or wins, a message will ask if they wish to play again.
-8 - User is asked if the want to play again. Return to point 3.
+   - If the player has attempts left, they will be asked to guess again.
+7. When the player has zero attempts left, the handman picture is complete and the game is over. Display message: "You lost."
+8. If the player guesses all the letters correctly, they win the game. Display message: "You won."  
+9. Both loss and win will prompt a message asking if they want to continue playing.
 
 ## Features and game functionalities
 
-## How to play
+### How to play
 The goal of the game is to identify the words correctly in order to save the little man from execution. There are seven possible attempts. To simplify guessing, I have identified 3 different categories that the player can select at the beginning of the game.
 
 ### Existing Features
 
-# Introductory nursery rhyme 
+### Introduction
+
+#### Introductory nursery rhyme 
 
 *In Italy we play a wordy game so grand,* <br>
 *It is the Hangman game! Where letters in the air stand.* <br>
@@ -163,6 +164,8 @@ Testing information can be found in [TESTING.md file](TESTING.md).
 ## Deployment
 
 ## Credits
+
+Chat GBT for the creation of the nursery rhyme (I give credit to myself as well - as I've embellished and made it more meaningful), for helping with the debugging process and for being such a helpful teacher.
 
 ### Content
 
