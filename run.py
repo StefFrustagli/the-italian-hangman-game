@@ -152,6 +152,8 @@ def introduction():
     print("  as the Italian Hangman, it's a challenging trip.")
     print("\n  Guess the word, solve the puzzle, and win the day!")
     print("  Or watch the hangman's noose, in the breeze, sway.\n")
+    print("")
+    print("  You have seven chances to guess the Italian word.")
 
 
 def get_random_word():
@@ -297,7 +299,7 @@ def print_dashed_word(word, num_attempts):
                 )  # Display the hangman image based on attempts
                 if num_attempts == 0:  # If attempts run out, the player loses
                     print("\n  YOU LOST!")
-                    print("  The Italian word was: ", word)
+                    print("  The Italian word was:",word)
                     used_letters.clear()  # Clear used_letters
                     return word_list, num_attempts
             # Update the word list to reveal correctly guessed letters        
