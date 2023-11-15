@@ -53,23 +53,22 @@ The idea was to make a simple and essential game that had a retro appeal. I want
 - I want to play a straight-forward word game.
 
 #### Retro game lover
-- I want to play a simple, quick word game that doesn't indulge in fancy aesthetics. 
+- I want to play a simple, quick classic game that doesn't indulge in fancy aesthetics. 
 - I want to feel like I'm in the 80s.
 - I want to play a straight-forward word game that can be played in a terminal.
 
-#### What the user might expect:
+### What the user might expect:
 - To understand the game's rules easily.
 - A simple game dynamic.
 - A fast and interactive game.
-- Categories of words to select.
-- To see the 
+- Word categories to choose from.
+- As the game progresses and incorrect words are chosen, to see the classic hangman picture.
 
-#### As a developer, I expect:
-- To provide an easy and logical navigation within the game.
+### As a developer, I expect:
+- To provide an easy and logical game dynamic.
 - To make the game as clear and simple to play as possible.
 - To provide clear instructions.
-- To provide some fun with a chance game.
-- To show my JavaScript skills.
+- To provide some fun with a word game.
 
 ## Aspects of planning
 ### Flowchart
