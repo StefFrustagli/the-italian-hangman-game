@@ -154,7 +154,7 @@ def introduction():
     print("\n  Guess the word, solve the puzzle, and win the day!")
     print("  Or watch the hangman's noose, in the breeze, sway.\n")
     print("  ________________________________\n")  # Visual separation
-    print("  You have seven chances to guess the Italian word.")
+    print("  You have seven attempts to guess the Italian word.")
 
 
 def get_random_word():
