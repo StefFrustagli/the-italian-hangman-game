@@ -1,7 +1,22 @@
+"""
+Main module for hangman game
+"""
+
 # Import necessary modules
 import random
 import string
 import sys
+
+from hangman import (
+    little_man_pic,
+    little_man_one,
+    little_man_two,
+    little_man_three,
+    little_man_four,
+    little_man_five,
+    little_man_six,
+    little_man_seven
+)
 
 # Define categories for word selection
 # Category: natural phenomena
@@ -67,80 +82,16 @@ WORD_BANK_THREE = [
 ]
 
 
-def little_man_pic():
-    print("      +---+")
-    print("       O  |")
-    print("      /|\\ |")
-    print("      / \\ |")
-    print("         ===")
-
-
-def little_man_one():
-    print("        ")
-    print("        ")
-    print("        ")
-    print("        ")
-    print("      ===")
-
-
-def little_man_two():
-    print("        ")
-    print("        ")
-    print("        ")
-    print("       |")
-    print("      ===")
-
-
-def little_man_three():
-    print("        ")
-    print("        ")
-    print("       |")
-    print("       |")
-    print("      ===")
-
-
-def little_man_four():
-    print("        ")
-    print("       |")
-    print("       |")
-    print("       |")
-    print("      ===")
-
-
-def little_man_five():
-    print("     --+")
-    print("       |")
-    print("       |")
-    print("       |")
-    print("      ===")
-
-
-def little_man_six():
-    print("   +---+")
-    print("       |")
-    print("       |")
-    print("       |")
-    print("      ===")
-
-
-def little_man_seven():
-    print("   +---+")
-    print("   O   |")
-    print("  /|\\  |")
-    print("  / \\  |")
-    print("      ===")
-
-
 def introduction():
     """
     Displays an introduction to the Italian Hangman game.
-    
-    Provides an introductory rhyme and instructions 
+
+    Provides an introductory rhyme and instructions
     for playing the game.
     """
     print("")
     print("\n  WELCOME TO THE ITALIAN HANGMAN GAME\n")
-    # Display introductory rhyme    
+    # Display introductory rhyme
     print("  In Italy we play a wordy game so grand,")
     print("  It is the Hangman game! Where letters in the air stand.")
     print("\n  Try guessing the hidden word, letter by letter,")
@@ -159,18 +110,19 @@ def introduction():
 
 def get_random_word():
     """
-    Allows the player to choose a category and selects 
+    Allows the player to choose a category and selects
     a random word from that category's WORD BANK.
 
     Returns:
-        str: Randomly selected word from the chosen 
+        str: Randomly selected word from the chosen
         category's WORD BANK.
     """
     # Categories available for word selection
     categories = {1: "Natural phenomena", 2: "Months & Seasons", 3: "Animals"}
     # Display category options
     print(
-        "\n  Select a category: \n\n  1: Natural phenomena\n  2: Months & Seasons\n  3: Animals\n"
+        "\n  Select a category: \n\n  1: Natural phenomena\n  "
+        "2: Months & Seasons\n  3: Animals\n"
     )
 
     while True:
@@ -192,13 +144,14 @@ def get_random_word():
             elif category_number == 3:
                 selected_word_bank = WORD_BANK_THREE
                 print("\n  Categoria: Animali")
-            # If a WORD BANK is selected, choose a random word 
+            # If a WORD BANK is selected, choose a random word
             # from it and return it in uppercase
             if selected_word_bank:
                 random_word = random.choice(selected_word_bank)
                 return random_word.upper()
         else:
-            print("  invalid choice. Please select a valid category. [1, 2, 3]")
+            print("  Invalid choice."
+                  " Please select a valid category. [1, 2, 3]")
 
 
 def display_hangman(num_attempts):
@@ -206,13 +159,13 @@ def display_hangman(num_attempts):
     Display the hangman's image based on the number of attempts left.
 
     Args:
-    num_attempts (int): Number of attempts remaining 
+    num_attempts (int): Number of attempts remaining
     before the hangman is fully drawn.
 
     Returns:
-    None: Prints the corresponding hangman's image 
+    None: Prints the corresponding hangman's image
     based on the number of attempts left.
-    """    
+    """
     if num_attempts == 6:
         # Display the hangman's image with one stage drawn
         little_man_one()
@@ -232,43 +185,43 @@ def display_hangman(num_attempts):
         # Display the hangman's image with six stages drawn
         little_man_six()
     else:
-        # Display the hangman's complete image 
+        # Display the hangman's complete image
         little_man_seven()
 
 
 def print_dashed_word(word, num_attempts):
     """
-    For a given word, prints the letters guessed correctly 
-    or dashes for unguessed letters. Reduces the number of 
-    attempts for incorrectly guessed letters and displays 
+    For a given word, prints the letters guessed correctly
+    or dashes for unguessed letters. Reduces the number of
+    attempts for incorrectly guessed letters and displays
     part of the hangman's picture.
 
     Args:
     word (str): The word to be guessed by the player.
-    num_attempts (int): The number of attempts allowed 
+    num_attempts (int): The number of attempts allowed
     before the game ends.
 
     Returns:
-    tuple: A tuple containing the updated word list and 
+    tuple: A tuple containing the updated word list and
     the remaining attempts.
 
     Explanation:
-    The function initializes the word list with dashes 
+    The function initializes the word list with dashes
     representing unguessed letters.
-    It prompts the player for a letter and handles the guess 
+    It prompts the player for a letter and handles the guess
     accordingly:
-        - If the letter is correct, it reveals the letter 
+        - If the letter is correct, it reveals the letter
           in the word.
-        - If the letter is incorrect, it reduces the attempts 
+        - If the letter is incorrect, it reduces the attempts
           and displays part of the hangman image.
-        - If the attempts run out, the player loses, 
+        - If the attempts run out, the player loses,
           revealing the word and clearing the used letters.
     """
     word_letters = set(word)  # Unique letters in the word
     alphabet = set(string.ascii_uppercase)
     used_letters = set()  # Guessed letters by the player
     # Initialize word list with dashes
-    word_list = ["_"] * len(word) 
+    word_list = ["_"] * len(word)
 
     while "_" in word_list and num_attempts > 0:
         # Display the current word (e.g., G _ _ T O)
@@ -276,7 +229,7 @@ def print_dashed_word(word, num_attempts):
         # Letter guessed by player
         player_letter = input(
             "\n  Guess a letter: \n  "
-        ).upper()  
+        ).upper()
         print("  ________________________________\n")  # Visual separation
 
         if (
@@ -300,19 +253,19 @@ def print_dashed_word(word, num_attempts):
                 )  # Display the hangman image based on attempts
                 if num_attempts == 0:  # If attempts run out, the player loses
                     print("\n  YOU LOST!")
-                    print("  The Italian word was:",word)
+                    print("  The Italian word was:", word)
                     used_letters.clear()  # Clear used_letters
                     return word_list, num_attempts
-            # Update the word list to reveal correctly guessed letters        
+            # Update the word list to reveal correctly guessed letters
             for i, letter in enumerate(
                 word
-            ):  
+            ):
                 if (
                     letter == player_letter
-                ):  
+                ):
                     word_list[
                         i
-                    ] = player_letter  # Corresponding index is updating with the letter
+                    ] = player_letter  # Index is updating with letter
             print("  Attempts left: ", num_attempts)
             print("  Letters used: ", ", ".join(used_letters))
         elif player_letter in used_letters:  # If the letter is already guessed
@@ -320,24 +273,24 @@ def print_dashed_word(word, num_attempts):
         else:  # If an invalid character is entered
             print("  Invalid character. Try again.")
     # Display the final word with guessed letters
-    print("\n  Word: ", " ".join(word_list)) 
+    print("\n  Word: ", " ".join(word_list))
     return word_list, num_attempts
 
 
 def restart_game(current_word):
     """
     Allows the player to restart the game upon winning or losing.
-    
+
     Args:
     current_word (str): The current word being played by the player.
 
     Returns:
-    tuple: A tuple containing the number of attempts and a new randomly 
+    tuple: A tuple containing the number of attempts and a new randomly
     selected word.
 
     Explanation:
     The function prompts the player if they want to restart the game.
-    - If the player chooses 'yes', the function resets the number of 
+    - If the player chooses 'yes', the function resets the number of
       attempts to 7 and selects a new word.
     - If the player chooses 'no', the game exits.
     """
@@ -347,7 +300,8 @@ def restart_game(current_word):
         answer = input("  [Yes/No]: \n  ").strip().lower()
         if answer == "yes":
             print(
-                "\n  Have another go! \n  Guess the Italian word and save the little man."
+                "\n  Have another go! \n "
+                " Guess the Italian word and save the little man."
             )
             num_attempts = 7
             new_word = get_random_word()  # Get a new random word
@@ -368,25 +322,30 @@ def ask_to_play():
     None
 
     Explanation:
-    The function prompts the player to start the game 
+    The function prompts the player to start the game
     by entering 'yes' or 'no'.
     - If 'yes', the game starts.
     - If 'no', the game exits.
-    - If the player enters anything other than 'yes' or 'no', 
+    - If the player enters anything other than 'yes' or 'no',
       it asks for a correct input.
     """
     while True:
-        answer = input("  WOULD YOU LIKE TO PLAY? [Yes/No]\n  ").strip().lower()
-        print("")
+        answer = (
+            input("  WOULD YOU LIKE TO PLAY? [Yes/No]\n  ")
+            .strip()
+            .lower()
+            )
 
         if answer == "yes":
-            print("\n  Let's play! Guess the Italian word and defeat the hangman.")
+            print("\n  Let's play!"
+                  " Guess the Italian word and defeat the hangman.")
             break  # Exit the loop as the user wants to play
         elif answer == "no":
             print("  Okay. Ciao!")
             sys.exit()  # Exit the game
         else:
             print("  Please enter 'Yes' or 'No'")
+
 
 def main():
     """
@@ -427,7 +386,8 @@ def main():
             num_attempts != 0 and "".join(current_word) == word
         ):  # Compare the joined character with original word
             print("")
-            print("  CONGRATULAZIONI! You have defeated the Italian hangman!\n")
+            print("  CONGRATULAZIONI!"
+                  " You have defeated the Italian hangman!\n")
             # Restart the game if the player wins
             num_attempts, word = restart_game(
                 current_word
@@ -438,7 +398,5 @@ def main():
             num_attempts, word = restart_game(current_word)
             continue  # Continue the game loop
 
-main()  
 
-
-
+main()
