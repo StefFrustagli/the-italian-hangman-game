@@ -120,7 +120,7 @@ When the terminal is open, a classic Hangman game picture is displayed.
 [PIC]
 Afterwards, a message welcoming the player is accompanied by a nursery rhyme that gives a jolly introduction to the game. As an alternative to the usual rules list, I came up with something that tries to grab the user's attention.
 
-[PIC terminal]
+[PIC TERMINAL]
 
 After that, the user is given a line of instructions with the number of attempts they have in order to guess the word. This is followed by an invitation to play, in capital letters, to which the user can reply and start the game dynamic.
 
@@ -144,7 +144,7 @@ After that, the user is given a line of instructions with the number of attempts
 
 #### User interactions 
 
-
+TO BE ADDED
 
 
 ### Future features and general aspects left to implement
@@ -174,50 +174,46 @@ Testing information can be found in [TESTING.md file](TESTING.md).
 
 ## Deployment
 
-## Steps to deploy site using Heroku:
-- On the Heroku dashboard, select "New" and click "Create new app"
-  - Create a unique app name
-  - Select your region
-  - Click "Create app"
-- Go to the settings tab:
-  - Scroll down to the config vars section and select "Reveal Config Vars"
-  - Add necessary config vars
-  - In this case, in the key field enter "PORT" and the value field enter "8000"
-  - Click "Add"
-  - Scroll down to Buildpacks and click "Add buildpack"
-  - Add the necessary buildpacks.
-  - In this case, select "python" and click "Save changes"
-  - Then, select "node.js" and click "Save changes"
-- Go to the Deploy tab:
-  - Select GitHub and confirm connection to GitHub account
-  - Search for the repository and click "Connect"
-  - Scroll down to the deploy options
-  - Select automatic deploys if you would like automatic deployment with each new push to the GitHub repository
-  - In manual deploy, select which branch to deploy and click "Deploy Branch"
-  - Heroku will start building the app
-- The link to the app can be found at the top of the page by clicking "Open app"
+Heroku was used to deploy the site. Here are the steps to deploy:
+
+1. Log in to Heroku.
+2. Click "Create a new app".
+3. Choose the app name and region.
+4. Click "Create app".
+5. Navigate to the "settings" tab.
+6. "Click "Reveal Config Vars".
+7. Add a configuration variable to Heroku's Settings. The key is PORT and the value is 8000
+8. Scroll down to "Buildpacks".
+9. Click "Add Buildpack".
+10. First, add "python" and click save.
+11. Second, add "nodejs" and click save.
 
 The live site can be found here: [The Italian Hangman Game]()
 
-## Steps to clone site:
-- In the GitHub repository, click the "Code" button.
-- Select "HTTPS" and copy the URL.
-- Open Git Bash and navigate to the repository where you would like to locate the cloned repository.
-- Type "git clone" followed by the copied URL.
-- Press enter to create the clone.
+### Cloning:
+1. Click the "Code" button in the GitHub repository.
+2. Choose "HTTPS" and copy the URL.
+3. Open the Terminam (in macOS) or Git Bash (in Windows) and navigate to the repository where you would like to locate the cloned repository.
+4. Type "git clone" followed by the copied URL.
+5. Press enter to create the clone.
+
+### Forking
+You can fork this project and make a copy of the original repository in your own GitHub account. In this case, you can view or make changes without affecting the original. To do so:
+
+- log into GitHub and locate the GitHub Repository;
+- at the top right of the screen, click the Fork button.
+
+It should be noted that all changes pushed to the main branch are automatically reflected on the site.
 
 
 ## Credits
-
-Chat GBT for the creation of the nursery rhyme (I give credit to myself as well - as I've embellished and made it more meaningful), for helping with the debugging process and for being such a helpful teacher.
-
 ### Content
-
+[TO BE ADDED]
 
 ### Code
 
-As this was my first time building a game with 
+As this was my first time building a game with [TO BE ADDED]
 
 ### Acknowledgment
 
-I am very grateful to my mentor Brian Macharia for his suggestions and feedback and to my classmate Niclas for his precious support.
+I am very grateful to my mentor Brian Macharia for his suggestions, and to my classmate Niclas for his precious support. Also, a special thanks goes to the amazing tool that is Chat GBT: it helped me with the creation of the nursery rhyme (I give credit to myself as well here, as I've embellished and made the rhymes more meaningful), the debugging process and to better understand how Python works.
