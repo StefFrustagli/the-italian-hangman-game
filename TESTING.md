@@ -7,7 +7,7 @@
 
 ### Python
 
-[](https://) was used to validate the Python with no errors highlighted.
+[CI Python Linter](https://pep8ci.herokuapp.com/#) was used to validate the Python code. No relevant errors highlighted.
 
 ## Manual testing
 
@@ -56,3 +56,10 @@
 |                                                     |                                                                                                                                                                                                 | Whenever a wrong character is inserted, a message should appear asking the user to enter a valid character.                          | Pass. It works as expected. |
 
 
+## Lighthouse test
+
+[TO BE ADDED]
+
+## Bugs resolved
+
+[TO BE ADDED]

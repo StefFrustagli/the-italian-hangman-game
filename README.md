@@ -8,8 +8,7 @@ This game is intended for intermediate Italian learners and Italians speakers (c
 
 [View the live project here: ](https://the-italian-hangman-game-c1a71b18c016.herokuapp.com/)
 
-![Responsice Mockup]() ADD MOCKUP
-
+![Responsice Mockup](https://i.ibb.co/qRfJtPR/my-screenshots-2023-11-16-at-20-39-24.png) 
 
 ## Table of Contents
 
@@ -158,7 +157,6 @@ TO BE ADDED
 - [Python:](https://www.python.org) Hight-level programming language used.
 - [PEP8](http://pep8online.com/) was used to check the code for PEP8 requirements.
 - [Heroku: Cloud Application Platform](https://dashboard.heroku.com/apps) was used for the deployment.
-- [GitHub Pages](https://pages.github.com/) is where the site is hosted.
 - [Git](https://git-scm.com/) was used for version control by utilising the Gitpod terminal to commit to Git and Push to GitHub.
 - [GitHub](https://github.com/) was used as the repository for the project after being pushed from Git.
 - [VSCode](https://code.visualstudio.com/) was used as the primary local Integrated Development Environment (IDE) for coding and development.
