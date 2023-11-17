@@ -115,35 +115,44 @@ The goal of the game is to identify the word correctly in order to save the litt
 ### Existing Features
 
 #### Introduction
-When the terminal is open, a classic Hangman game picture is displayed.
-[PIC]
+When the terminal is open, a classic picture of the Hangman game is displayed.
+
+![Hangman picture](https://i.ibb.co/fdnQFxj/hangman-pic.png)
+
 Afterwards, a message welcoming the player is accompanied by a nursery rhyme that gives a jolly introduction to the game. As an alternative to the usual rules list, I came up with something that tries to grab the user's attention.
 
-[PIC TERMINAL]
+![Welcome message and nursery rhyme](https://i.ibb.co/7189q62/Welcome-message-and-rhyme.png)
 
-After that, the user is given a line of instructions with the number of attempts they have in order to guess the word. This is followed by an invitation to play, in capital letters, to which the user can reply and start the game dynamic.
+After that, the user is given a line of instructions with the number of attempts they have to guess the word. This is followed by an invitation to play, in capital letters, to which the user can reply and start the game dynamic.
+
+![Instruction line and nvitation to play](https://i.ibb.co/wKmZqZt/my-screenshots-2023-11-17-at-20-30-20.png)
 
 ##### Introductory nursery rhyme 
 
-*In Italy we play a wordy game so grand,* <br>
-*It is the Hangman game! Where letters in the air stand.* <br>
-
-*Trying guessing the hidden word, letter by letter,* <br> 
-*and the poor man's fate - you'll make it so much better.* <br> 
-
-*The keyboard is right there - be ready to play.* <br>
-*Try your best - don't let the hangman swing today.* <br>
-*From "A" to "Z," choose your letters with care,* <br>
-*and remember: in Italian we don't use y or j or x.* <br>
-
-*So guess away - don't let your chances slip,* <br>
-*as the Italian Hangman, it's a challenging trip.* <br>
-*Guess the word, solve the puzzle, and win the day!* <br>
-*Or watch the hangman's noose, in the breeze, sway.*<br> 
+The nursery rhyme was created with chat GBT collaboration. I think it's my favourite part since it sets a merry atmosphere. As this type of game is very straightforward, the rhyme was just a funny way for me to convey the most important pieces of information. Reading it, the player can learn what the game is about (guessing a word), the language of the word (Italian), and the game's purpose (saving a little man from the Italian hangman) that gives a little bit of extra funny context.
 
 #### User interactions 
 
-TO BE ADDED
+The game begins when the player enters 'yes'. Immediately, they are asked to choose a category from "Natural phenomena," "Months & seasons," and "Animals."
+
+[PIC]
+
+When the player selects a category, the Italian translation appears, followed by a dashed word with dashes corresponding to the letters the player must guess. Next is the input for guessing a letter. 
+
+The game continues until the attempts are over or the player guesses the word first.
+
+Players and the game interact quickly. 
+
+FASI DELLA HANGMAN PICTURE
+
+MESSAGGIO DI VITTORIA
+
+MESSAGGIO DI SCONFITTA
+
+RESTART THE GAME
+
+EXIT THE GAME
+
 
 
 ### Future features and general aspects left to implement
