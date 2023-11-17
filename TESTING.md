@@ -9,6 +9,7 @@
 
 [CI Python Linter](https://pep8ci.herokuapp.com/#) was used to validate the Python code. No errors were highlighted. View result [here](https://i.ibb.co/SnwWzTn/my-screenshots-2023-11-17-at-18-11-41.png).
 
+
 ## Manual testing
 
 | **TO BE TESTED**                                    | **TEST ACTION**                                                                                                                                                                                 | **EXPECTED OUTCOME**                                                                                                                 | **TEST OUTCOME**            |

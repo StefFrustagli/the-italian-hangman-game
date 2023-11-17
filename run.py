@@ -1,11 +1,11 @@
 """
-Main module for hangman game
+Main module for the game
 """
 
 # Import necessary modules
-import random
-import string
-import sys
+import random # For generating random words from different categories
+import string # For accessing all uppercase letters in the alphabet
+import sys # For system-specific functionality like exiting the game
 
 from hangman import (
     little_man_pic,
