@@ -126,7 +126,8 @@ def get_random_word():
     )
 
     while True:
-        selection = input("  Please indicate the category's number: \n  ")
+        selection = input("  Please indicate"
+                          " the category's number: \n  ").strip()
 
         if selection in ["1", "2", "3"]:
             category_number = int(selection)
@@ -229,7 +230,7 @@ def print_dashed_word(word, num_attempts):
         # Letter guessed by player
         player_letter = input(
             "\n  Guess a letter: \n  "
-        ).upper()
+        ).upper().strip()
         print("  ________________________________\n")  # Visual separation
 
         if (
@@ -308,7 +309,7 @@ def restart_game(current_word):
             print("PRINT 1 IN RESTART: ", new_word)
             return num_attempts, new_word  # Return values to the main function
         elif answer == "no":
-            print("  Okay. Alla prossima!")
+            print("  Okay. Bye bye!")
             sys.exit()  # Exit the game if the player chooses not to restart
         else:
             print("  Please enter 'Yes' or 'No'")
