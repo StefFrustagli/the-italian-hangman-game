@@ -7,7 +7,7 @@
 
 ### Python
 
-[CI Python Linter](https://pep8ci.herokuapp.com/#) was used to validate the Python code. No relevant errors highlighted.
+[CI Python Linter](https://pep8ci.herokuapp.com/#) was used to validate the Python code. No errors were highlighted. View result [here](https://i.ibb.co/SnwWzTn/my-screenshots-2023-11-17-at-18-11-41.png).
 
 ## Manual testing
 
@@ -55,10 +55,6 @@
 |                                                     |                                                                                                                                                                                                 | The user should exit the game if they enter a negative answer.                                                                       | Pass. It works as expected. |
 |                                                     |                                                                                                                                                                                                 | Whenever a wrong character is inserted, a message should appear asking the user to enter a valid character.                          | Pass. It works as expected. |
 
-
-## Lighthouse test
-
-[TO BE ADDED]
 
 ## Bugs resolved
 
