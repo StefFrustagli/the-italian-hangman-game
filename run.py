@@ -7,6 +7,12 @@ import random # For generating random words from different categories
 import string # For accessing all uppercase letters in the alphabet
 import sys # For system-specific functionality like exiting the game
 
+# Word banks imported
+# Defined categories for word selection
+from natural_phenomena import WORD_BANK_ONE
+from months_seasons import WORD_BANK_TWO
+from animals import WORD_BANK_THREE
+
 from hangman import (
     little_man_pic,
     little_man_one,
@@ -17,69 +23,6 @@ from hangman import (
     little_man_six,
     little_man_seven
 )
-
-# Define categories for word selection
-# Category: natural phenomena
-WORD_BANK_ONE = [
-    "temporale",
-    "pioggia",
-    "grandine",
-    "vento",
-    "arcobaleno",
-    "fulmine",
-    "tempesta",
-    "tuono",
-    "maremoto",
-    "terremoto",
-    "alluvione",
-    "frana",
-    "valanga",
-    "tornado",
-]
-
-# Category: months & seasons
-WORD_BANK_TWO = [
-    "gennaio",
-    "febbraio",
-    "marzo",
-    "aprile",
-    "maggio",
-    "giugno",
-    "luglio",
-    "agosto",
-    "settembre",
-    "ottobre",
-    "novembre",
-    "dicembre",
-    "primavera",
-    "estate",
-    "autunno",
-    "inverno",
-]
-
-# Category: animals
-WORD_BANK_THREE = [
-    "cammello",
-    "rinoceronte",
-    "elefante",
-    "ermellino",
-    "bisonte",
-    "canguro",
-    "lucertola",
-    "coccodrillo",
-    "anaconda",
-    "criceto",
-    "cavallo",
-    "pantera",
-    "delfino",
-    "balena",
-    "gorilla",
-    "antilope",
-    "asino",
-    "murena",
-    "aquila",
-    "rondine",
-]
 
 
 def introduction():
