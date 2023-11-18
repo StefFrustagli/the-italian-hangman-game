@@ -259,11 +259,11 @@ It should be noted that all changes pushed to the main branch are automatically 
 
 ## Credits
 ### Content
-[TO BE ADDED]
+This is a classic Hangman game with Italian words. For more info about the history of the game, please refer to [Wikipedia](https://en.wikipedia.org/wiki/Hangman_(game)).
 
 ### Code
 
-As this was my first time building a game with [TO BE ADDED]
+My first step was to watch some hangman videos on YouTube, like [this](https://youtu.be/cJJTnI22IF8?si=4nZef1AhFSj1baPk) by Kylie Ying or [this one](https://youtu.be/m4nEnsavl6w?si=Wi3xwg5GOtgJFG6m) by Kite, to get an idea of how to set the game up. Then in preparation for coding, I created a flowchart to visualize the game logic. When the logic was clear, I started writing function descriptions as my mentor suggested so I would know exactly what I wanted from each function. Then I coded step-by-step, aided by online researching.
 
 ### Acknowledgment
 
