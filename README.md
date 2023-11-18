@@ -74,7 +74,7 @@ The idea was to make a simple and essential game with a retro appeal. I wanted t
 - To make the game as clear and simple to play as possible.
 - To provide some fun.
 
-## Aspects of planning
+## Planning
 ### Flowchart
 I created this flowchart when I was planning the logic for the game. Even though it is rough and does not contain all the passages, it has helped me with the development of the game dynamic.
 
@@ -110,7 +110,7 @@ During the planning process, I took the following notes:
 ## Features and game functionalities
 
 ### How to play
-The goal of the game is to identify the word correctly in order to save the little man from execution. There are seven possible attempts. As a way of simplifying the guessing game, I have defined three different categories the player can choose from at the beginning.
+The goal of the game is to identify the word correctly within seven attempts and save the little man from execution. As a way of simplifying the guessing game, I have defined three different categories the player can choose from at the beginning.
 
 ### Existing Features
 
@@ -139,7 +139,7 @@ The game begins when the player enters 'yes'. Immediately, they are asked to cho
 
 When the player selects a category, the Italian translation appears, followed by a dashed word with dashes corresponding to the letters the player must guess. Next is the input for guessing a letter. 
 
-PIC
+![Dashboard when category is selected](https://i.ibb.co/XsQyWNZ/my-screenshots-2023-11-18-at-15-09-14.png)
 
 Whenever a correct letter is guessed, it replaces the dashes in the word and a "well done!" message is displayed.
 
@@ -180,12 +180,15 @@ Image displayed when the attempt left is 0:
 
 
 ##### Victory message
+A victory message appears when the player wins the game:
 ![Victory message](https://i.ibb.co/VjCcDCz/victory-message.png)
 
 ##### Loss message
+A loss message appears when the player loses the game:
 ![Loss message](https://i.ibb.co/bzhPsm7/loss-message.png)
 
 ##### Restart the game
+A restart input appears whenever the player wins or loses. An affirmative answer restarts the game and the player is asked to select a category. A negative answer ends the game.
 ![Input to restart the game](https://i.ibb.co/TwVGJRt/Would-you-like-to-play-again-input.png)
 
 ##### Exit the game
