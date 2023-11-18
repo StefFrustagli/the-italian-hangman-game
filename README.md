@@ -4,15 +4,17 @@
 </br>
 This is a Python terminal game that runs on Heroku's mock terminal created by the Code Institute.
 
-This game is intended for intermediate Italian learners and Italians speakers (children or adults) who enjoy simple word guessing games. As the instructions are given in English, a basic understanding of English is also required. It is a classic version of the game in which the player must guess the word letter by letter within a certain number of attempts.
+This game is intended for intermediate Italian learners and Italians speakers (children or adults) who enjoy simple word guessing games. As the instructions are given in English, a basic understanding of English is also required. It is a classic version of the game in which the player must guess the word, letter by letter, within a certain number of attempts.
 
-[View the live project here: ](https://the-italian-hangman-game-c1a71b18c016.herokuapp.com/)
+View the live project [here](https://the-italian-hangman-game-c1a71b18c016.herokuapp.com/).
 
-![Responsice Mockup](https://i.ibb.co/qRfJtPR/my-screenshots-2023-11-16-at-20-39-24.png) 
+Responsive Mockup:
+![Responsive Mockup](https://i.ibb.co/H2p6wRc/responsive-mockup.png) 
 
 ## Table of Contents
 
 - [User Experience (UX)](#user-experience)
+- [Planning ](#Planning)
 - [Features & Game functionalities](#features-and-game-functionalities)
 - [Tecnologies used](#technologies-used)
 - [Testing](#testing)
@@ -78,7 +80,7 @@ The idea was to make a simple and essential game with a retro appeal. I wanted t
 ### Flowchart
 I created this flowchart when I was planning the logic for the game. Even though it is rough and does not contain all the passages, it has helped me with the development of the game dynamic.
 
-![Draft flowchart](https://i.ibb.co/tbNrtxM/flowchart.png)
+![Draft flowchart](https://i.ibb.co/9Y6gmWv/my-screenshots-2023-11-18-at-18-19-32.png)
 
 ### Game flow
 
@@ -188,11 +190,13 @@ A loss message appears when the player loses the game:
 ![Loss message](https://i.ibb.co/bzhPsm7/loss-message.png)
 
 ##### Restart the game
-A restart input appears whenever the player wins or loses. An affirmative answer restarts the game and the player is asked to select a category. A negative answer ends the game.
+A restart input appears whenever the player wins or loses. 
 ![Input to restart the game](https://i.ibb.co/TwVGJRt/Would-you-like-to-play-again-input.png)
+An affirmative answer restarts the game and the player is asked to select a category. A negative answer ends the game.
+
 
 ##### Exit the game
-Whenever the player responds negatively to the game-starting input, the game is ended.
+Whenever the player responds negatively to the game-starting input, the game is ended and a goodbye message appears.
 ![Game exits](https://i.ibb.co/VDPmzkL/would-you-like-to-play-again-NO.png)
 
 ### Future features and general aspects left to implement
