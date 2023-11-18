@@ -306,7 +306,6 @@ def restart_game(current_word):
             )
             num_attempts = 7
             new_word = get_random_word()  # Get a new random word
-            print("PRINT 1 IN RESTART: ", new_word)
             return num_attempts, new_word  # Return values to the main function
         elif answer == "no":
             print("  Okay. Bye bye!")
@@ -374,7 +373,6 @@ def main():
     word = (
         get_random_word()
     )  # Random word from the word banks stored in the variable called word
-    print("PRINT 1 MAIN WORD: ", word)
     print("")
 
     # Game loop & victory condition
