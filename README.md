@@ -135,25 +135,62 @@ The nursery rhyme was created with chat GBT collaboration. I think it's my favou
 
 The game begins when the player enters 'yes'. Immediately, they are asked to choose a category from "Natural phenomena," "Months & seasons," and "Animals."
 
-[PIC]
+![Select a category: 1: Natural phenomena, 2: Months & seasons, 3: Animals](https://i.ibb.co/mFSbyhS/category.png)
 
 When the player selects a category, the Italian translation appears, followed by a dashed word with dashes corresponding to the letters the player must guess. Next is the input for guessing a letter. 
 
+PIC
+
+Whenever a correct letter is guessed, it replaces the dashes in the word and a "well done!" message is displayed.
+
+The dashboard will appear like this:
+![Dashboard when correct letter is guessed](https://i.ibb.co/BBbYPxF/well-done-correct-letter.png)
+
+
+When a wrong letter is guessed, instead, a consequent message informing the player appears. A piece of the Hangman picture and the remaining attempts are displayed accordingly.
+
+The dashboard will appear like this:
+![Dashboard when wrong letter is guessed](https://i.ibb.co/3zwxD0k/The-letter-is-not-in-the-word.png)
+
 The game continues until the attempts are over or the player guesses the word first.
 
-Players and the game interact quickly. 
+##### Phases of the hangman's picture
+Since the user has seven chances to guess the word, seven pieces of the Hangman picture will be constructed, one by one. Whenever the user makes a wrong guess, this is displayed. 
 
-FASI DELLA HANGMAN PICTURE
+Image displayed when the attempts left are 6:
+![Image displayed when the attempts left are 6](https://i.ibb.co/kxyJWMP/attempts-6.png)
 
-MESSAGGIO DI VITTORIA
+Image displayed when the attempts left are 5:
+![Image displayed when the attempts left are 5](https://i.ibb.co/7rZpB1M/my-screenshots-2023-11-18-at-12-57-37.png)
 
-MESSAGGIO DI SCONFITTA
+Image displayed when the attempts left are 4:
+![Image displayed when the attempts left are 4](https://i.ibb.co/5cYrnM0/my-screenshots-2023-11-18-at-14-13-57.png)
 
-RESTART THE GAME
+Image displayed when the attempts left are 3:
+![Image displayed when the attempts left are 3](https://i.ibb.co/GTN0Dnh/my-screenshots-2023-11-18-at-12-58-16.png)
 
-EXIT THE GAME
+Image displayed when the attempts left are 2:
+![Image displayed when the attempts left are 2](https://i.ibb.co/7pJkqDk/my-screenshots-2023-11-18-at-12-59-33.png)
+
+Image displayed when the attempt left is 1:
+![Image displayed when the attempt left is 1](https://i.ibb.co/DkDRpzy/my-screenshots-2023-11-18-at-12-59-59.png)
+
+Image displayed when the attempt left is 0:
+![Image displayed when the attempt left is 0](https://i.ibb.co/NYsgM5v/my-screenshots-2023-11-18-at-13-00-27.png)
 
 
+##### Victory message
+![Victory message](https://i.ibb.co/VjCcDCz/victory-message.png)
+
+##### Loss message
+![Loss message](https://i.ibb.co/bzhPsm7/loss-message.png)
+
+##### Restart the game
+![Input to restart the game](https://i.ibb.co/TwVGJRt/Would-you-like-to-play-again-input.png)
+
+##### Exit the game
+Whenever the player responds negatively to the game-starting input, the game is ended.
+![Game exits](https://i.ibb.co/VDPmzkL/would-you-like-to-play-again-NO.png)
 
 ### Future features and general aspects left to implement
 - Increase the number of words in the word bank.
