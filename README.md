@@ -129,7 +129,7 @@ After that, the user is given a line of instructions with the number of attempts
 
 ##### Introductory nursery rhyme 
 
-The nursery rhyme was created with chat GBT collaboration. I think it's my favourite part since it sets a merry atmosphere. As this type of game is very straightforward, the rhyme was just a funny way for me to convey the most important pieces of information. Reading it, the player can learn what the game is about (guessing a word), the language of the word (Italian), and the game's purpose (saving a little man from the Italian hangman) that gives a little bit of extra funny context.
+The nursery rhyme was created with chatGPT collaboration. I think it's my favourite part since it sets a merry atmosphere. As this type of game is very straightforward, the rhyme was just a funny way for me to convey the most important pieces of information. Reading it, the player can learn what the game is about (guessing a word), the language of the word (Italian), and the game's purpose (saving a little man from the Italian hangman) that gives a little bit of extra funny context.
 
 #### User interactions 
 
@@ -260,4 +260,4 @@ As this was my first time building a game with [TO BE ADDED]
 
 ### Acknowledgment
 
-I am very grateful to my mentor Brian Macharia for his suggestions, and to my classmate Niclas for his precious support. Also, a special thanks goes to the amazing tool that is Chat GBT: it helped me with the creation of the nursery rhyme (I give credit to myself as well here, as I've embellished and made the rhymes more meaningful), the debugging process and to better understand how Python works.
+I am very grateful to my mentor Brian Macharia for his suggestions, and to my classmate Niclas for his precious support. Also, a special thanks goes to the amazing tool that is ChatGPT: it helped me with the creation of the nursery rhyme (I give credit to myself as well here, as I've embellished and made the rhymes more meaningful), the debugging process and to better understand how Python works.
