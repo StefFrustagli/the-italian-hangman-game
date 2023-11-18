@@ -3,9 +3,9 @@ Main module for the game
 """
 
 # Import necessary modules
-import random # For generating random words from different categories
-import string # For accessing all uppercase letters in the alphabet
-import sys # For system-specific functionality like exiting the game
+import random  # For generating random words from different categories
+import string  # For accessing all uppercase letters in the alphabet
+import sys  # For system-specific functionality like exiting the game
 
 # Word banks imported
 # Defined categories for word selection
