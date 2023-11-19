@@ -242,10 +242,10 @@ Whenever the player responds negatively to the game-starting input, the game is 
 
 
 ## Modules imported 
+The three modules used are part of the Python Standard Library.
 - **Random Module**: this module provides functions to generate random numbers, choices, and sequences. In the game, it was used to extrapolate random words from the word bank.
 - **String Module**: this module contains various string-specific constants and functions, offering utilities for string manipulations, like checking character sets or formatting. In the game, it was used to access all uppercase letters in the alphabet.
 - **Sys Module**: this module provides access to some variables used or maintained by the Python interpreter and facilitates interactions with the system environment. Specifically, in this project it was used to exit the game.
-
 
 ## Testing
 
