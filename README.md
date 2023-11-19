@@ -160,24 +160,31 @@ The game continues until the attempts are over or the player guesses the word fi
 Since the user has seven chances to guess the word, seven pieces of the Hangman picture will be constructed, one by one. Whenever the user makes a wrong guess, this is displayed. 
 
 Image displayed when the attempts left are 6:
+
 ![Image displayed when the attempts left are 6](https://i.ibb.co/kxyJWMP/attempts-6.png)
 
 Image displayed when the attempts left are 5:
+
 ![Image displayed when the attempts left are 5](https://i.ibb.co/7rZpB1M/my-screenshots-2023-11-18-at-12-57-37.png)
 
 Image displayed when the attempts left are 4:
+
 ![Image displayed when the attempts left are 4](https://i.ibb.co/5cYrnM0/my-screenshots-2023-11-18-at-14-13-57.png)
 
 Image displayed when the attempts left are 3:
+
 ![Image displayed when the attempts left are 3](https://i.ibb.co/GTN0Dnh/my-screenshots-2023-11-18-at-12-58-16.png)
 
 Image displayed when the attempts left are 2:
+
 ![Image displayed when the attempts left are 2](https://i.ibb.co/7pJkqDk/my-screenshots-2023-11-18-at-12-59-33.png)
 
 Image displayed when the attempt left is 1:
+
 ![Image displayed when the attempt left is 1](https://i.ibb.co/DkDRpzy/my-screenshots-2023-11-18-at-12-59-59.png)
 
 Image displayed when the attempt left is 0:
+
 ![Image displayed when the attempt left is 0](https://i.ibb.co/NYsgM5v/my-screenshots-2023-11-18-at-13-00-27.png)
 
 
@@ -191,12 +198,15 @@ A loss message appears when the player loses the game:
 
 ##### Restart the game
 A restart input appears whenever the player wins or loses. 
+
 ![Input to restart the game](https://i.ibb.co/TwVGJRt/Would-you-like-to-play-again-input.png)
+
 An affirmative answer restarts the game and the player is asked to select a category. A negative answer ends the game.
 
 
 ##### Exit the game
 Whenever the player responds negatively to the game-starting input, the game is ended and a goodbye message appears.
+
 ![Game exits](https://i.ibb.co/VDPmzkL/would-you-like-to-play-again-NO.png)
 
 ### Future features and general aspects left to implement
@@ -217,6 +227,11 @@ Whenever the player responds negatively to the game-starting input, the game is 
 - [ImgBB](https://imgbb.com/) was used to upload images and extract the source code.
 - [Am I Responsive?](http://ami.responsivedesign.is) was used to generate the mockup of the website.
 - [Table Convert](https://tableconvert.com/) was used to generate tables for the TESTING.md file.
+
+## Modules imported 
+- **Random Module**: this module provides functions to generate random numbers, choices, and sequences. In the game, it was used to extrapolate random words from the word bank.
+- **String Module**: this module contains various string-specific constants and functions, offering utilities for string manipulations, like checking character sets or formatting. In the game, it was used to access all uppercase letters in the alphabet.
+- **Sys Module**: the sys module provides access to some variables used or maintained by the Python interpreter and facilitates interactions with the system environment. Specifically, in this project it was used to exit the game.
 
 
 ## Testing
@@ -263,7 +278,7 @@ This is a classic Hangman game with Italian words. For more info about the histo
 
 ### Code
 
-My first step was to watch some hangman videos on YouTube, like [this](https://youtu.be/cJJTnI22IF8?si=4nZef1AhFSj1baPk) by Kylie Ying or [this one](https://youtu.be/m4nEnsavl6w?si=Wi3xwg5GOtgJFG6m) by Kite, to get an idea of how to set the game up. Then in preparation for coding, I created a flowchart to visualize the game logic. When the logic was clear, I started writing function descriptions as my mentor suggested so I would know exactly what I wanted from each function. Then I coded step-by-step, aided by online researching.
+My first step was to watch some hangman videos on YouTube, like [this](https://youtu.be/cJJTnI22IF8?si=4nZef1AhFSj1baPk) by Kylie Ying or [this one](https://youtu.be/m4nEnsavl6w?si=Wi3xwg5GOtgJFG6m) by Kite, to get an idea of how to set the game up. Then in preparation for coding, I created a flowchart to visualize the game logic. When the logic was clear, I started writing function descriptions as my mentor suggested, so I would know exactly what I wanted from each function. Then I coded step-by-step, aided by online researching.
 
 ### Acknowledgment
 
