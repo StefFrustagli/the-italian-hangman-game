@@ -112,7 +112,7 @@ During the planning process, I took the following notes:
 ## Features and game functionalities
 
 ### How to play
-The goal of the game is to identify the word correctly within seven attempts and save the little man from execution. As a way of simplifying the guessing game, I have defined three different categories the player can choose from at the beginning.
+The goal of the game is to identify the word correctly within seven attempts and save the little man from execution. As a way of simplifying the guessing game, I have defined three different categories that can be selected by the plater at the beginning.
 
 ### Existing Features
 
@@ -121,7 +121,7 @@ When the terminal is open, a classic picture of the Hangman game is displayed.
 
 ![Hangman picture](https://i.ibb.co/fdnQFxj/hangman-pic.png)
 
-Afterwards, a message welcoming the player is accompanied by a nursery rhyme that gives a jolly introduction to the game. As an alternative to the usual rules list, I came up with something that tries to grab the user's attention.
+Afterwards, a message welcoming the player is accompanied by a nursery rhyme that gives a jolly introduction to the game. As an alternative to the usual rules list, I wanted to come up with something that grabs the user's attention.
 
 ![Welcome message and nursery rhyme](https://i.ibb.co/7189q62/Welcome-message-and-rhyme.png)
 
@@ -146,18 +146,23 @@ When the player selects a category, the Italian translation appears, followed by
 Whenever a correct letter is guessed, it replaces the dashes in the word and a "well done!" message is displayed.
 
 The dashboard will appear like this:
-![Dashboard when correct letter is guessed](https://i.ibb.co/BBbYPxF/well-done-correct-letter.png)
 
+![Dashboard when correct letter is guessed](https://i.ibb.co/BBbYPxF/well-done-correct-letter.png)
 
 When a wrong letter is guessed, instead, a consequent message informing the player appears. A piece of the Hangman picture and the remaining attempts are displayed accordingly.
 
 The dashboard will appear like this:
+
 ![Dashboard when wrong letter is guessed](https://i.ibb.co/3zwxD0k/The-letter-is-not-in-the-word.png)
+
+The player is then asked to guess again.
+
+Users are informed of the letters guessed and the number of attempts remained at each step.
 
 The game continues until the attempts are over or the player guesses the word first.
 
 ##### Phases of the hangman's picture
-Since the user has seven chances to guess the word, seven pieces of the Hangman picture will be constructed, one by one. Whenever the user makes a wrong guess, this is displayed. 
+Since the user has seven chances to guess the word, seven pieces of the Hangman picture will be constructed, one by one, whenever the user makes a wrong guess.
 
 Image displayed when the attempts left are 6:
 
@@ -187,14 +192,15 @@ Image displayed when the attempt left is 0:
 
 ![Image displayed when the attempt left is 0](https://i.ibb.co/NYsgM5v/my-screenshots-2023-11-18-at-13-00-27.png)
 
+##### Loss message
+A loss message appears when the player loses the game:
+![Loss message](https://i.ibb.co/bzhPsm7/loss-message.png)
 
 ##### Victory message
 A victory message appears when the player wins the game:
 ![Victory message](https://i.ibb.co/VjCcDCz/victory-message.png)
 
-##### Loss message
-A loss message appears when the player loses the game:
-![Loss message](https://i.ibb.co/bzhPsm7/loss-message.png)
+"Congratulazioni" is clearly the Italian for "congratulations". As I did not want English and Italian mixed in the input messages, I only used Italian in a few instances.
 
 ##### Restart the game
 A restart input appears whenever the player wins or loses. 
@@ -217,8 +223,9 @@ Whenever the player responds negatively to the game-starting input, the game is 
 
 ## Technologies used
 
-- [Python:](https://www.python.org) Hight-level programming language used.
+- [Python:](https://www.python.org) Hight-level programming language used for the creation of the game.
 - [PEP8](http://pep8online.com/) was used to check the code for PEP8 requirements.
+- [Code Beautify - Python Beautifier](https://codebeautify.org/python-formatter-beautifier) was used to format the code.
 - [Heroku: Cloud Application Platform](https://dashboard.heroku.com/apps) was used for the deployment.
 - [Git](https://git-scm.com/) was used for version control by utilising the Gitpod terminal to commit to Git and Push to GitHub.
 - [GitHub](https://github.com/) was used as the repository for the project after being pushed from Git.
@@ -227,6 +234,8 @@ Whenever the player responds negatively to the game-starting input, the game is 
 - [ImgBB](https://imgbb.com/) was used to upload images and extract the source code.
 - [Am I Responsive?](http://ami.responsivedesign.is) was used to generate the mockup of the website.
 - [Table Convert](https://tableconvert.com/) was used to generate tables for the TESTING.md file.
+- [ChatGPT](https://chat.openai.com/) was used as helpful tool during the debugging process.
+
 
 ## Modules imported 
 - **Random Module**: this module provides functions to generate random numbers, choices, and sequences. In the game, it was used to extrapolate random words from the word bank.
@@ -278,7 +287,7 @@ This is a classic Hangman game with Italian words. For more info about the histo
 
 ### Code
 
-My first step was to watch some hangman videos on YouTube, like [this](https://youtu.be/cJJTnI22IF8?si=4nZef1AhFSj1baPk) by Kylie Ying or [this one](https://youtu.be/m4nEnsavl6w?si=Wi3xwg5GOtgJFG6m) by Kite, to get an idea of how to set the game up. Then in preparation for coding, I created a flowchart to visualize the game logic. When the logic was clear, I started writing function descriptions as my mentor suggested, so I would know exactly what I wanted from each function. Then I coded step-by-step, aided by online researching.
+My first step was to watch some hangman videos on YouTube, like [this](https://youtu.be/cJJTnI22IF8?si=4nZef1AhFSj1baPk) by Kylie Ying or [this one](https://youtu.be/m4nEnsavl6w?si=Wi3xwg5GOtgJFG6m) by Kite, to get an idea of how to set the game up. Then in preparation for my coding process, I created a flowchart to visualize the game logic. When the logic was clear, I started writing function descriptions as my mentor suggested, so I would know exactly what I wanted from each function. Then I coded step-by-step, aided by online researching.
 
 ### Acknowledgment
 

@@ -64,3 +64,7 @@ The biggest problems I had were caused by function bugs. The parameters, argumen
  - For example, I had an issue with the restart_game function: when the player chose to play again, I returned the new random word and the number of attempts but did not update the word and num_attempts variables in the main loop. As a result, the main loop continued with the old word, and the game exited immediately. So I needed to make a small adjustment to the main function, replacing the word and num_attempts variables in the main loop with the values returned from the restart_game function, to ensure the word and num_attempts were updated. This solved the problem and the game worked as expected.
 
 - Another issue in the main function caused the game to stop when restarted after the player selected a category. To fix this I had to replace the return statement inside the while True loop with 'continue' to keep the loop running.
+
+## Remaining bugs
+
+To the best of my knowledge, there are no remaining bugs.
