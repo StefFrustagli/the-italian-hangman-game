@@ -1,4 +1,5 @@
 # THE ITALIAN HANGMAN GAME
+by Stefania Frustagli
 
 *It's time to play the **Italian hangman game**!*</br>
 </br>
@@ -9,6 +10,7 @@ This game is intended for intermediate Italian learners and Italians speakers (c
 View the live project [here](https://the-italian-hangman-game-c1a71b18c016.herokuapp.com/).
 
 Responsive Mockup:
+
 ![Responsive Mockup](https://i.ibb.co/H2p6wRc/responsive-mockup.png) 
 
 ## Table of Contents
@@ -25,11 +27,11 @@ Responsive Mockup:
 
 ### Project's goal & Design 
 
-The idea was to make a simple and essential game with a retro appeal. I wanted to limit possible aesthetic improvements and let the player experience the pure joy or frustration of guessing words. The game mechanics were designed to be straightforward and immediate. As a result, the game is fast and can be enjoyed during a study or work break.
+The idea was to make a simple and essential game with a retro appeal. I wanted to limit possible aesthetic improvements and let the player experience the pure joy and frustration of guessing words. The game mechanics were designed to be straightforward and immediate. As a result, the game is fast and can be enjoyed during a study or work break.
 
 ### Ideal players
 
-- Learner of Italian as a second language who wish to practice their Italian words.
+- Learner of Italian as a second language who wants to practice Italian words.
 - Casual Italian speaker player with a basic knowledge of English who wants to play a guessing word game.
 - Casual player with a basic knowledge of Italian and English who wants to distract themselves from daily tasks.
 - Gamer who loves word retro games.
@@ -62,7 +64,7 @@ The idea was to make a simple and essential game with a retro appeal. I wanted t
 #### Retro game lover
 - I want to play a simple, quick classic game that doesn't indulge in fancy aesthetics. 
 - I want to feel like I'm in the 80s.
-- I want to play a straight-forward word game that can be played in a terminal.
+- I want to play a straight-forward word game that can be played on a terminal.
 
 ### What the user might expect:
 - To understand the game's rules easily.
@@ -74,11 +76,12 @@ The idea was to make a simple and essential game with a retro appeal. I wanted t
 ### As a developer, I expect:
 - To provide an easy and logical game dynamic.
 - To make the game as clear and simple to play as possible.
-- To provide some fun.
+- To provide some entertainment.
+- To provide a game challenging enough to keep the player interested.
 
 ## Planning
 ### Flowchart
-I created this flowchart when I was planning the logic for the game. Even though it is rough and does not contain all the passages, it has helped me with the development of the game dynamic.
+I created this flowchart when I was planning the logic for the game. Even though it is rough, it has helped me with the development of the game dynamic.
 
 ![Draft flowchart](https://i.ibb.co/9Y6gmWv/my-screenshots-2023-11-18-at-18-19-32.png)
 
@@ -90,13 +93,13 @@ During the planning process, I took the following notes:
    - If 'yes', the game starts.
    - If 'no', the game exits.
 3. If user wants to play, the game displays a random dashed version of the word (example: _ _ _ _ )
- - Dashes are displayed instead of letters (user knows the word length).
- - When guessed correctly, the correct letter replaces the dash.
- - Display for the player:
-   - Word: _ _ _ _ _ _ 
-   - Length of the word
-   - Letters guessed: a, b
-   - Attempts left: num
+   - Dashes are displayed instead of letters (user knows the word length).
+   - When guessed correctly, the correct letter replaces the dash.
+   - Display for the player:
+      - Word: _ _ _ _ _ _ 
+      - Length of the word
+      - Letters guessed: a, b
+      - Attempts left: num
 4. User asked to choose a letter.
 5. A message appears: 
    - if the letter is incorrect: "Letter wrong. Please try again."
@@ -107,12 +110,12 @@ During the planning process, I took the following notes:
    - If the player has attempts left, they will be asked to guess again.
 7. When the player has zero attempts left, the handman picture is complete and the game is over. Display message: "You lost."
 8. If the player guesses all the letters correctly, they win the game. Display message: "You won."  
-9. Both loss and win will prompt a message asking if they want to continue playing.
+9. Both loss and win will prompt a message asking if user wants to continue playing.
 
 ## Features and game functionalities
 
 ### How to play
-The goal of the game is to identify the word correctly within seven attempts and save the little man from execution. As a way of simplifying the guessing game, I have defined three different categories that can be selected by the plater at the beginning.
+The goal of the game is to identify the word correctly within seven attempts and save the little man from execution. As a way of simplifying the guessing game, I have defined three different categories that can be selected by the player at the beginning.
 
 ### Existing Features
 
@@ -125,13 +128,13 @@ Afterwards, a message welcoming the player is accompanied by a nursery rhyme tha
 
 ![Welcome message and nursery rhyme](https://i.ibb.co/7189q62/Welcome-message-and-rhyme.png)
 
-After that, the user is given a line of instructions with the number of attempts they have to guess the word. This is followed by an invitation to play, in capital letters, to which the user can reply and start the game dynamic.
+After that, the user is given a line of instructions with the number of attempts they have in order to guess the word. This is followed by an invitation to play, in capital letters, to which the user can reply and start the game dynamic.
 
 ![Instruction line and nvitation to play](https://i.ibb.co/wKmZqZt/my-screenshots-2023-11-17-at-20-30-20.png)
 
 ##### Introductory nursery rhyme 
 
-The nursery rhyme was created with chatGPT collaboration. I think it's my favourite part since it sets a merry atmosphere. As this type of game is very straightforward, the rhyme was just a funny way for me to convey the most important pieces of information. Reading it, the player can learn what the game is about (guessing a word), the language of the word (Italian), and the game's purpose (saving a little man from the Italian hangman) that gives a little bit of extra funny context.
+The nursery rhyme was created in collaboration with chatGPT. I think it's my favourite part, since it sets a merry atmosphere. As this type of game is very straightforward, the rhyme was just a funny way for me to convey the most important pieces of information. Reading it, the player can learn what the game is about (guessing a word), the language of the word (Italian), and the game's purpose (saving a little man from the Italian hangman) that gives a little bit of extra funny context.
 
 #### User interactions 
 
@@ -156,7 +159,6 @@ The dashboard will appear like this:
 ![Dashboard when wrong letter is guessed](https://i.ibb.co/3zwxD0k/The-letter-is-not-in-the-word.png)
 
 The player is then asked to guess again.
-
 Users are informed of the letters guessed and the number of attempts remained at each step.
 
 The game continues until the attempts are over or the player guesses the word first.
@@ -193,7 +195,8 @@ Image displayed when the attempt left is 0:
 ![Image displayed when the attempt left is 0](https://i.ibb.co/NYsgM5v/my-screenshots-2023-11-18-at-13-00-27.png)
 
 ##### Loss message
-A loss message appears when the player loses the game:
+A loss message appears when the player loses the game, and the correct word will be displayed:
+
 ![Loss message](https://i.ibb.co/bzhPsm7/loss-message.png)
 
 ##### Victory message
@@ -219,11 +222,12 @@ Whenever the player responds negatively to the game-starting input, the game is 
 - Increase the number of words in the word bank.
 - Provide more categories to choose from. 
 - Add a tracking score to keep track of players' progress.
+- Make the style more reminiscent of retro games.
 
 
 ## Technologies used
 
-- [Python:](https://www.python.org) Hight-level programming language used for the creation of the game.
+- [Python](https://www.python.org): Hight-level programming language used for the creation of the game.
 - [PEP8](http://pep8online.com/) was used to check the code for PEP8 requirements.
 - [Code Beautify - Python Beautifier](https://codebeautify.org/python-formatter-beautifier) was used to format the code.
 - [Heroku: Cloud Application Platform](https://dashboard.heroku.com/apps) was used for the deployment.
@@ -240,7 +244,7 @@ Whenever the player responds negatively to the game-starting input, the game is 
 ## Modules imported 
 - **Random Module**: this module provides functions to generate random numbers, choices, and sequences. In the game, it was used to extrapolate random words from the word bank.
 - **String Module**: this module contains various string-specific constants and functions, offering utilities for string manipulations, like checking character sets or formatting. In the game, it was used to access all uppercase letters in the alphabet.
-- **Sys Module**: the sys module provides access to some variables used or maintained by the Python interpreter and facilitates interactions with the system environment. Specifically, in this project it was used to exit the game.
+- **Sys Module**: this module provides access to some variables used or maintained by the Python interpreter and facilitates interactions with the system environment. Specifically, in this project it was used to exit the game.
 
 
 ## Testing
@@ -287,7 +291,7 @@ This is a classic Hangman game with Italian words. For more info about the histo
 
 ### Code
 
-My first step was to watch some hangman videos on YouTube, like [this](https://youtu.be/cJJTnI22IF8?si=4nZef1AhFSj1baPk) by Kylie Ying or [this one](https://youtu.be/m4nEnsavl6w?si=Wi3xwg5GOtgJFG6m) by Kite, to get an idea of how to set the game up. Then in preparation for my coding process, I created a flowchart to visualize the game logic. When the logic was clear, I started writing function descriptions as my mentor suggested, so I would know exactly what I wanted from each function. Then I coded step-by-step, aided by online researching.
+My first step was to watch some hangman game videos on YouTube, like [this](https://youtu.be/cJJTnI22IF8?si=4nZef1AhFSj1baPk) by Kylie Ying or [this one](https://youtu.be/m4nEnsavl6w?si=Wi3xwg5GOtgJFG6m) by Kite, to get an idea of how to set the game up. Then in preparation for my coding process, I created a flowchart to visualize the game logic. When the logic was clear, I started writing function descriptions, as my mentor suggested, so I would know exactly what I wanted from each function. Then, I coded step-by-step, aided by online researching.
 
 ### Acknowledgment
 
